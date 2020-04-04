@@ -35,6 +35,7 @@
             this.lbsifre = new System.Windows.Forms.Label();
             this.lbconfirm = new System.Windows.Forms.Label();
             this.btnnewaccount = new System.Windows.Forms.Button();
+            this.lblhata = new System.Windows.Forms.Label();
             this.lbmassage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -96,10 +97,18 @@
             this.btnnewaccount.UseVisualStyleBackColor = true;
             this.btnnewaccount.Click += new System.EventHandler(this.btnnewaccount_Click);
             // 
+            // lblhata
+            // 
+            this.lblhata.AutoSize = true;
+            this.lblhata.Location = new System.Drawing.Point(160, 235);
+            this.lblhata.Name = "lblhata";
+            this.lblhata.Size = new System.Drawing.Size(0, 17);
+            this.lblhata.TabIndex = 8;
+            // 
             // lbmassage
             // 
             this.lbmassage.AutoSize = true;
-            this.lbmassage.Location = new System.Drawing.Point(148, 226);
+            this.lbmassage.Location = new System.Drawing.Point(291, 235);
             this.lbmassage.Name = "lbmassage";
             this.lbmassage.Size = new System.Drawing.Size(0, 17);
             this.lbmassage.TabIndex = 7;
@@ -109,6 +118,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(357, 304);
+            this.Controls.Add(this.lblhata);
             this.Controls.Add(this.lbmassage);
             this.Controls.Add(this.btnnewaccount);
             this.Controls.Add(this.lbconfirm);
@@ -135,6 +145,7 @@
         private System.Windows.Forms.Label lbsifre;
         private System.Windows.Forms.Label lbconfirm;
         private System.Windows.Forms.Button btnnewaccount;
+        private System.Windows.Forms.Label lblhata;
         private System.Windows.Forms.Label lbmassage;
     }
 }

@@ -38,6 +38,7 @@
             this.sifre = new System.Windows.Forms.TextBox();
             this.btnnewaccount = new System.Windows.Forms.Button();
             this.checkremember = new System.Windows.Forms.CheckBox();
+            this.save = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // usernametxt
@@ -121,6 +122,10 @@
             this.checkremember.UseVisualStyleBackColor = true;
             this.checkremember.CheckedChanged += new System.EventHandler(this.checkremember_CheckedChanged);
             // 
+            // save
+            // 
+            this.save.FileOk += new System.ComponentModel.CancelEventHandler(this.save_FileOk);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -154,6 +159,7 @@
         private System.Windows.Forms.TextBox sifre;
         private System.Windows.Forms.Button btnnewaccount;
         private System.Windows.Forms.CheckBox checkremember;
+        private System.Windows.Forms.SaveFileDialog save;
     }
 }
 

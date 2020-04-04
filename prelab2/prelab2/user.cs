@@ -10,6 +10,7 @@ namespace prelab2
     {
         private string username;
         private string password;
+        private string type;
 
         public string Username
         {
@@ -36,5 +37,8 @@ namespace prelab2
                 password = value;
             }
         }
+
+        public string Type { get => type; set => type = value; }
+        
     }
 }
