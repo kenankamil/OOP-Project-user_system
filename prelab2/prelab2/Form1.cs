@@ -8,15 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ooplab.Properties; 
 using System.Security.Cryptography;
 using System.IO;
+using ooplab;
+
 namespace prelab2
 {
     public partial class Form1 : Form
     {
-        user user = null;
-        Form2 form2;
-        List<user> users = new List<user>();
+        User user = null;
+        Admin admin = new Admin();
+
         public Form1()
         {
             InitializeComponent();
@@ -24,26 +27,33 @@ namespace prelab2
 
         public void Form1_Load(object sender, EventArgs e)
         {
-
-                using (var reader = new StreamReader(@"Data\user.csv"))
-                {               
-                    while (!reader.EndOfStream)
-                    {
-                        var line = reader.ReadLine();
-                        var values = line.Split(';');
-                    int size = users.Count();
-                    user temp = new user();
+            using (var reader = new StreamReader(@"Data\user.csv"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(';');
+                   // int size = users.Count();
+                    User temp = new User();
                     temp.Username = values[0];
                     temp.Password = values[1];
-                    users.Add(temp);
-                  //  Console.WriteLine(temp.Username + " " + temp.Password);
+                    temp.Type = values[2];
+                  
+                    users.Userlist.Add(temp);
+                    //  Console.WriteLine(temp.Username + " " + temp.Password);
                 }
-              
             }
-             
+            if (ooplab.Properties.Settings.Default.Username != string.Empty)
+            {
+                if (ooplab.Properties.Settings.Default.RememberMe == "yes")
+                {
+                    usernametxt.Text = ooplab.Properties.Settings.Default.Username;
+                    passwordtxt.Text = ooplab.Properties.Settings.Default.Password;
+                    checkremember.Checked = true;
+                }
+            }          
         }
-        
-        
+
         private void password_TextChanged(object sender, EventArgs e)
         {
 
@@ -53,49 +63,66 @@ namespace prelab2
         {
 
         }
+
         private void LOGİN_Click(object sender, EventArgs e)
         {
             string username = usernametxt.Text.ToString();
-            string password =ComputeSha256Hash(passwordtxt.Text);
+            string password = ComputeSha256Hash(passwordtxt.Text);
 
-            foreach (user item in users)
+            foreach (User item in users.Userlist)
             {
-                if (item.Username ==username  && item.Password == password)                                                                  
+                if (item.Username == username && item.Password == password)
                 {
                     user = item;
                     lblSonuc.Text = "success";
                     lblSonuc.ForeColor = Color.Green;
-                    form2 = new Form2(item);
-                    timer1.Interval = 3000;
-                    timer1.Start();             
+                    // form2 = new Form2(item);
+                    //  timer1.Interval = 3000;
+                    //timer1.Start();     
+                  
+                    if(user.Type=="Admin")
+                    {
+                        this.Hide();
+                        admin.Show();
+                    }
                     
                 }
             }
+
             if (user == null)
             {
                 lblSonuc.Text = "Failure";
                 lblSonuc.ForeColor = Color.Red;
             }
-            if(checkremember.Checked)
-            {               
+            if (checkremember.Checked)
+            {
+                ooplab.Properties.Settings.Default.Username = usernametxt.Text;
+                ooplab.Properties.Settings.Default.Password = passwordtxt.Text;
+                ooplab.Properties.Settings.Default.RememberMe = "yes";
+                ooplab.Properties.Settings.Default.Save();
+            }
+            else
+            {
+                ooplab.Properties.Settings.Default.Username = "";
+                ooplab.Properties.Settings.Default.Password = "";
+                ooplab.Properties.Settings.Default.RememberMe = "";
+                ooplab.Properties.Settings.Default.Save();
+            }
 
-            }                
-                 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Stop();
-            form2.ShowDialog();
+            /* timer1.Stop();
+             form2.ShowDialog();
 
-            this.Close();
-
+             this.Close();
+             */
         }
 
         static string ComputeSha256Hash(string rawData)
@@ -118,14 +145,14 @@ namespace prelab2
 
         private void hashbtn_Click(object sender, EventArgs e)
         {
-            sifre.Text = ComputeSha256Hash(passwordtxt.Text);                       
+            sifre.Text = ComputeSha256Hash(passwordtxt.Text);
+                      
         }
 
         private void btnewaccount_Click(object sender, EventArgs e)
         {
             Newaccount Newaccount = new Newaccount();
-            Newaccount.ShowDialog();      
-            
+            Newaccount.ShowDialog();
         }
 
         private void checkremember_CheckedChanged(object sender, EventArgs e)
@@ -137,5 +164,55 @@ namespace prelab2
         {
 
         }
+
+        private void btntsv_Click(object sender, EventArgs e)
+        {
+            //var fileContent = string.Empty;
+            //var filePath = string.Empty;
+
+            //using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            //{
+            //    openFileDialog.InitialDirectory = "C:\\Users\\kenan\\Desktop\\19_20_spring_oop2_152120161068\\prelab2\\prelab2\\bin\\Debug\\Data";
+            //    openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            //    openFileDialog.FilterIndex = 2;
+            //    openFileDialog.RestoreDirectory = true;
+
+            //    if (openFileDialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        //Get the path of specified file
+            //        filePath = openFileDialog.FileName;
+
+            //        //Read the contents of the file into a stream
+            //        var fileStream = openFileDialog.OpenFile();
+
+            //        using (StreamReader reader = new StreamReader(fileStream))
+            //        {
+            //            fileContent = reader.ReadToEnd();
+            //        }
+            //    }
+            //}
+
+            //MessageBox.Show(fileContent, "File Content at path: " + filePath, MessageBoxButtons.OK);
+
+            
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            
+        }
+
+       
+
+        private void save_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }
+
+    
+
+
+    
+
