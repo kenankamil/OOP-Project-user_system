@@ -13,17 +13,20 @@ namespace ooplab
 {
     public partial class Admin : Form
     {
-        UserManagement UserManagement;
+        
         public Admin()
         {
             InitializeComponent();
-            user user = new user();
+            User user = new User();
             lblName1.Text = user.Username;
         }
 
         private void btnUserManagement_Click(object sender, EventArgs e)
         {
-            UserManagement.Show();
+            UserManagement usermanagement = new UserManagement();
+            this.Close();
+            usermanagement.Show();         
+            
         }
 
         private void txtID_TextChanged(object sender, EventArgs e)

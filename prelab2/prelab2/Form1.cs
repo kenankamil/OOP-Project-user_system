@@ -11,13 +11,15 @@ using System.Windows.Forms;
 using ooplab.Properties; 
 using System.Security.Cryptography;
 using System.IO;
+using ooplab;
+
 namespace prelab2
 {
     public partial class Form1 : Form
     {
-        user user = null;
-        Form2 form2;
-        List<user> users = new List<user>();
+        User user = null;
+        Admin admin = new Admin();
+
         public Form1()
         {
             InitializeComponent();
@@ -31,13 +33,13 @@ namespace prelab2
                 {
                     var line = reader.ReadLine();
                     var values = line.Split(';');
-                    int size = users.Count();
-                    user temp = new user();
+                   // int size = users.Count();
+                    User temp = new User();
                     temp.Username = values[0];
                     temp.Password = values[1];
                     temp.Type = values[2];
                   
-                    users.Add(temp);
+                    users.Userlist.Add(temp);
                     //  Console.WriteLine(temp.Username + " " + temp.Password);
                 }
             }
@@ -67,7 +69,7 @@ namespace prelab2
             string username = usernametxt.Text.ToString();
             string password = ComputeSha256Hash(passwordtxt.Text);
 
-            foreach (user item in users)
+            foreach (User item in users.Userlist)
             {
                 if (item.Username == username && item.Password == password)
                 {
@@ -76,7 +78,14 @@ namespace prelab2
                     lblSonuc.ForeColor = Color.Green;
                     // form2 = new Form2(item);
                     //  timer1.Interval = 3000;
-                    //timer1.Start();                             
+                    //timer1.Start();     
+                  
+                    if(user.Type=="Admin")
+                    {
+                        this.Hide();
+                        admin.Show();
+                    }
+                    
                 }
             }
 

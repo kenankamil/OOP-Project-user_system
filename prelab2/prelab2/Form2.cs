@@ -12,8 +12,8 @@ namespace prelab2
 {
     public partial class Form2 : Form
     {
-        user user;
-        public Form2(user user)
+        User user;
+        public Form2(User user)
         {
             this.user = user;
             InitializeComponent();
