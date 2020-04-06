@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ooplab.Properties; 
+using ooplab.Properties;
 using System.Security.Cryptography;
 using System.IO;
 using ooplab;
@@ -27,15 +27,15 @@ namespace prelab2
 
         public void Form1_Load(object sender, EventArgs e)
         {
-        //    string fileName = @"Data\user.csv";
+            //string fileName = @"Data\user.csv";
 
-        //        // Check if file already exists. If yes, delete it.     
-        //        if (!File.Exists(fileName))
-        //        {
-        //        File.Create(fileName);
-        //        }
+            //   // Check if file already exists. If yes, delete it.     
+            //    if (!File.Exists(fileName))
+            //    {
+            //    File.Create(fileName);
+            //    }
 
-                using (var reader = new StreamReader(@"Data\user.csv"))
+            using (var reader = new StreamReader(@"Data\user.csv"))
             {
                 while (!reader.EndOfStream)
                 {
@@ -58,54 +58,7 @@ namespace prelab2
                     passwordtxt.Text = ooplab.Properties.Settings.Default.Password;
                     checkremember.Checked = true;
                 }
-            }          
-        }
-
-        private void LOGİN_Click(object sender, EventArgs e)
-        {
-            string username = usernametxt.Text.ToString();
-            string password =Hash256.ComputeSha256Hash(passwordtxt.Text);
-
-            foreach (User item in users.Userlist)
-            {
-                if (item.Username == username && item.Password == password)
-                {
-                    user = item;
-                    lblSonuc.Text = "success";
-                    lblSonuc.ForeColor = Color.Green;
-                    // form2 = new Form2(item);
-                    //  timer1.Interval = 3000;
-                    //timer1.Start();     
-                  
-                    if(user.Type=="Admin")
-                    {
-                        this.Hide();
-                        admin.Show();
-                    }
-                    
-                }
             }
-
-            if (user == null)
-            {
-                lblSonuc.Text = "Failure";
-                lblSonuc.ForeColor = Color.Red;
-            }
-            if (checkremember.Checked)
-            {
-                ooplab.Properties.Settings.Default.Username = usernametxt.Text;
-                ooplab.Properties.Settings.Default.Password = passwordtxt.Text;
-                ooplab.Properties.Settings.Default.RememberMe = "yes";
-                ooplab.Properties.Settings.Default.Save();
-            }
-            else
-            {
-                ooplab.Properties.Settings.Default.Username = "";
-                ooplab.Properties.Settings.Default.Password = "";
-                ooplab.Properties.Settings.Default.RememberMe = "";
-                ooplab.Properties.Settings.Default.Save();
-            }
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -138,18 +91,6 @@ namespace prelab2
                 }
                 return builder.ToString();
             }
-        }
-
-        private void hashbtn_Click(object sender, EventArgs e)
-        {
-            sifre.Text = ComputeSha256Hash(passwordtxt.Text);
-                      
-        }
-
-        private void btnewaccount_Click(object sender, EventArgs e)
-        {
-            Newaccount newaccount = new Newaccount();
-            newaccount.ShowDialog();     
         }
 
         private void checkremember_CheckedChanged(object sender, EventArgs e)
@@ -191,25 +132,78 @@ namespace prelab2
 
             //MessageBox.Show(fileContent, "File Content at path: " + filePath, MessageBoxButtons.OK);
 
-            
         }
-
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
-            
-        }
 
-       
+        }
 
         private void save_FileOk(object sender, CancelEventArgs e)
         {
 
         }
+
+        private void LOGİN_Click_1(object sender, EventArgs e)
+        {
+            string username = usernametxt.Text.ToString();
+            string password = Hash256.ComputeSha256Hash(passwordtxt.Text);
+
+            foreach (User item in users.Userlist)
+            {
+                if (item.Username == username && item.Password == password)
+                {
+                    user = item;
+                    lblSonuc.Text = "Success";
+                    lblSonuc.ForeColor = Color.Green;
+                    // form2 = new Form2(item);
+                    //  timer1.Interval = 3000;
+                    //timer1.Start();     
+
+                    if (user.Type == "Admin")
+                    {
+                        this.Hide();
+                        admin.Show();
+                    }
+                    else
+                        MessageBox.Show("Success, But there is only Admin Panel for this Week !");
+
+                }
+            }
+
+            if (user == null)
+            {
+                lblSonuc.Text = "Failure";
+                lblSonuc.ForeColor = Color.Red;
+            }
+            if (checkremember.Checked)
+            {
+                ooplab.Properties.Settings.Default.Username = usernametxt.Text;
+                ooplab.Properties.Settings.Default.Password = passwordtxt.Text;
+                ooplab.Properties.Settings.Default.RememberMe = "yes";
+                ooplab.Properties.Settings.Default.Save();
+            }
+            else
+            {
+                ooplab.Properties.Settings.Default.Username = "";
+                ooplab.Properties.Settings.Default.Password = "";
+                ooplab.Properties.Settings.Default.RememberMe = "";
+                ooplab.Properties.Settings.Default.Save();
+            }
+        }
+        private void btnnewaccount_Click(object sender, EventArgs e)
+        {
+            Newaccount newaccount = new Newaccount();
+            newaccount.ShowDialog();
+        }
+
+        private void lblminimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
-
-    
-
-
-    
-

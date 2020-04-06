@@ -23,7 +23,7 @@ namespace ooplab
 
         private void UserManagement_Load(object sender, EventArgs e)
         {
-            for(int i=0;i<users.Userlist.Count;i++)
+            for (int i = 0; i < users.Userlist.Count; i++)
             {
                 cmbusername.Items.Add(users.Userlist[i].Username);
             }
@@ -51,8 +51,8 @@ namespace ooplab
                             users.Userlist[i].Password + Environment.NewLine + "Type: " + users.Userlist[i].Type;
                         break;
                     }
-                }  
-            }            
+                }
+            }
         }
         private void btnsave_Click(object sender, EventArgs e)
         {
@@ -62,21 +62,21 @@ namespace ooplab
                 File.Delete(@"Data\user.csv");
                 string fileName = @"Data\user.csv";
                 File.Create(fileName).Close();
-                    users.Userlist[i].Password =Hash256.ComputeSha256Hash(txtnewpassword.Text);
-                    for (int j = 0; j < users.Userlist.Count; j++)
+                users.Userlist[i].Password = Hash256.ComputeSha256Hash(txtnewpassword.Text);
+                for (int j = 0; j < users.Userlist.Count; j++)
+                {
                     {
-                        {
-                        var newLine = string.Format("{0};{1};{2}", users.Userlist[j].Username,users.Userlist[j].Password, users.Userlist[j].Type, Environment.NewLine);
-                            csv.AppendLine(newLine);
-                            lblmassage.Text = "Success";
+                        var newLine = string.Format("{0};{1};{2}", users.Userlist[j].Username, users.Userlist[j].Password, users.Userlist[j].Type, Environment.NewLine);
+                        csv.AppendLine(newLine);
+                        lblmassage.Text = "Success";
                         txtList.Text = "Username: " + users.Userlist[i].Username + Environment.NewLine + "Password: " +
                            users.Userlist[i].Password + Environment.NewLine + "Type: " + users.Userlist[i].Type;
                     }
-                    }
+                }
                 File.AppendAllText(@"Data\user.csv", csv.ToString());
             }
             else
-                lblmassage.Text = "Not Confirm"; 
+                lblmassage.Text = "Not Confirm";
         }
 
         private void btnSaveType_Click(object sender, EventArgs e)
@@ -99,5 +99,14 @@ namespace ooplab
             File.AppendAllText(@"Data\user.csv", csv.ToString());
         }
 
+        private void lblminimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void lblclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
