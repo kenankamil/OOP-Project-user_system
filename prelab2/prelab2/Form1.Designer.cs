@@ -49,7 +49,6 @@
             this.usernametxt.Size = new System.Drawing.Size(76, 20);
             this.usernametxt.TabIndex = 0;
             this.usernametxt.Text = "username";
-            this.usernametxt.TextChanged += new System.EventHandler(this.username_TextChanged);
             // 
             // passwordtxt
             // 
@@ -60,7 +59,6 @@
             this.passwordtxt.Size = new System.Drawing.Size(76, 20);
             this.passwordtxt.TabIndex = 1;
             this.passwordtxt.Text = "password";
-            this.passwordtxt.TextChanged += new System.EventHandler(this.password_TextChanged);
             // 
             // LOGİN
             // 

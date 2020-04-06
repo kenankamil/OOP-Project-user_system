@@ -33,12 +33,11 @@ namespace prelab2
                 {
                     var line = reader.ReadLine();
                     var values = line.Split(';');
-                   // int size = users.Count();
+                    // int size = users.Count();
                     User temp = new User();
                     temp.Username = values[0];
                     temp.Password = values[1];
                     temp.Type = values[2];
-                  
                     users.Userlist.Add(temp);
                     //  Console.WriteLine(temp.Username + " " + temp.Password);
                 }
@@ -52,16 +51,6 @@ namespace prelab2
                     checkremember.Checked = true;
                 }
             }          
-        }
-
-        private void password_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void username_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void LOGİN_Click(object sender, EventArgs e)
@@ -151,8 +140,8 @@ namespace prelab2
 
         private void btnewaccount_Click(object sender, EventArgs e)
         {
-            Newaccount Newaccount = new Newaccount();
-            Newaccount.ShowDialog();
+            Newaccount newaccount = new Newaccount();
+            newaccount.ShowDialog();
         }
 
         private void checkremember_CheckedChanged(object sender, EventArgs e)
