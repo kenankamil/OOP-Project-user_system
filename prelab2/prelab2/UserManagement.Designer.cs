@@ -34,10 +34,11 @@
             this.lstUserList = new System.Windows.Forms.ListBox();
             this.cmbusername = new System.Windows.Forms.ComboBox();
             this.btnsave = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtnewpassword = new System.Windows.Forms.TextBox();
+            this.txtconfirm = new System.Windows.Forms.TextBox();
+            this.lblnewpassword = new System.Windows.Forms.Label();
+            this.lblconfirm = new System.Windows.Forms.Label();
+            this.lblmassage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtList
@@ -101,49 +102,58 @@
             this.btnsave.UseVisualStyleBackColor = true;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
-            // textBox1
+            // txtnewpassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 324);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 6;
+            this.txtnewpassword.Location = new System.Drawing.Point(115, 324);
+            this.txtnewpassword.Name = "txtnewpassword";
+            this.txtnewpassword.Size = new System.Drawing.Size(100, 22);
+            this.txtnewpassword.TabIndex = 6;
             // 
-            // textBox2
+            // txtconfirm
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 352);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 7;
+            this.txtconfirm.Location = new System.Drawing.Point(115, 352);
+            this.txtconfirm.Name = "txtconfirm";
+            this.txtconfirm.Size = new System.Drawing.Size(100, 22);
+            this.txtconfirm.TabIndex = 7;
             // 
-            // label1
+            // lblnewpassword
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 324);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Users";
+            this.lblnewpassword.AutoSize = true;
+            this.lblnewpassword.Location = new System.Drawing.Point(10, 327);
+            this.lblnewpassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblnewpassword.Name = "lblnewpassword";
+            this.lblnewpassword.Size = new System.Drawing.Size(104, 17);
+            this.lblnewpassword.TabIndex = 8;
+            this.lblnewpassword.Text = "New Password:";
             // 
-            // label2
+            // lblconfirm
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 355);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Users:";
+            this.lblconfirm.AutoSize = true;
+            this.lblconfirm.Location = new System.Drawing.Point(10, 355);
+            this.lblconfirm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblconfirm.Name = "lblconfirm";
+            this.lblconfirm.Size = new System.Drawing.Size(60, 17);
+            this.lblconfirm.TabIndex = 9;
+            this.lblconfirm.Text = "Confirm:";
+            // 
+            // lblmassage
+            // 
+            this.lblmassage.AutoSize = true;
+            this.lblmassage.Location = new System.Drawing.Point(137, 417);
+            this.lblmassage.Name = "lblmassage";
+            this.lblmassage.Size = new System.Drawing.Size(0, 17);
+            this.lblmassage.TabIndex = 10;
             // 
             // UserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblmassage);
+            this.Controls.Add(this.lblconfirm);
+            this.Controls.Add(this.lblnewpassword);
+            this.Controls.Add(this.txtconfirm);
+            this.Controls.Add(this.txtnewpassword);
             this.Controls.Add(this.btnsave);
             this.Controls.Add(this.cmbusername);
             this.Controls.Add(this.lstUserList);
@@ -167,9 +177,10 @@
         private System.Windows.Forms.ListBox lstUserList;
         private System.Windows.Forms.ComboBox cmbusername;
         private System.Windows.Forms.Button btnsave;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtnewpassword;
+        private System.Windows.Forms.TextBox txtconfirm;
+        private System.Windows.Forms.Label lblnewpassword;
+        private System.Windows.Forms.Label lblconfirm;
+        private System.Windows.Forms.Label lblmassage;
     }
 }

@@ -42,27 +42,24 @@ namespace prelab2
         {
             Form1 form1 = new Form1();    
             var csv = new StringBuilder();
-           
-
             if (txtpassword.Text == txtconfirm.Text)
             {
                 var username = txtusername.Text;
                 var password = ComputeSha256Hash(txtpassword.Text);
-                var type="Admin";
+                var type = "Admin";
                 int flag = 99;
                 using (var reader = new StreamReader(@"Data\user.csv"))
                 {
-                  
                     while (!reader.EndOfStream)
                     {
                         var line = reader.ReadLine();
                         var values = line.Split(';');
-                        if(username==values[0])
+                        if (username == values[0])
                         {
                             flag = 0;
                             lblhata.Text = "Is already taken";
                             break;
-                        }                                      
+                        }
                         type = "User";
                     }
                 }
@@ -72,21 +69,20 @@ namespace prelab2
                     csv.AppendLine(newLine);
                     File.AppendAllText(@"Data\user.csv", csv.ToString());
                     lblhata.Text = "Success";
-                    user.Username = username;
-                    user.Password = password;
-                    user.Type = type;
                     users.Userlist.Clear();
                     this.Close();
                     form1.Show();
                 }
             }
             else
-                lbmassage.Text = "Not Confirm!!";                
+                lbmassage.Text = "Not Confirm!!";
         }
 
         private void Newaccount_Load(object sender, EventArgs e)
         {
             Form1.ActiveForm.Hide();                      
         }
+
+   
     }
 }
