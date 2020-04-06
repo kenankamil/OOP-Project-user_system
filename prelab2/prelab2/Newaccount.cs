@@ -66,6 +66,14 @@ namespace prelab2
             Form1.ActiveForm.Hide();
         }
 
-   
+        private void lblminimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

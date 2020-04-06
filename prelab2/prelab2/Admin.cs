@@ -18,7 +18,6 @@ namespace ooplab
         {
             InitializeComponent();
             User user = new User();
-            lblName1.Text = user.Username;
         }
 
         private void btnUserManagement_Click(object sender, EventArgs e)
@@ -29,14 +28,14 @@ namespace ooplab
             
         }
 
-        private void txtID_TextChanged(object sender, EventArgs e)
+        private void lblminimize_Click(object sender, EventArgs e)
         {
-
+            WindowState = FormWindowState.Minimized;
         }
 
-        private void Admin_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-         
+            this.Close();
         }
     }
 }
