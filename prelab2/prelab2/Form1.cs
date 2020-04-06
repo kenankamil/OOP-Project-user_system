@@ -27,7 +27,15 @@ namespace prelab2
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            using (var reader = new StreamReader(@"Data\user.csv"))
+        //    string fileName = @"Data\user.csv";
+
+        //        // Check if file already exists. If yes, delete it.     
+        //        if (!File.Exists(fileName))
+        //        {
+        //        File.Create(fileName);
+        //        }
+
+                using (var reader = new StreamReader(@"Data\user.csv"))
             {
                 while (!reader.EndOfStream)
                 {
@@ -56,7 +64,7 @@ namespace prelab2
         private void LOGİN_Click(object sender, EventArgs e)
         {
             string username = usernametxt.Text.ToString();
-            string password = ComputeSha256Hash(passwordtxt.Text);
+            string password =Hash256.ComputeSha256Hash(passwordtxt.Text);
 
             foreach (User item in users.Userlist)
             {
@@ -114,7 +122,7 @@ namespace prelab2
              */
         }
 
-        static string ComputeSha256Hash(string rawData)
+        public static string ComputeSha256Hash(string rawData)
         {
             // Create a SHA256   
             using (SHA256 sha256Hash = SHA256.Create())
@@ -141,7 +149,7 @@ namespace prelab2
         private void btnewaccount_Click(object sender, EventArgs e)
         {
             Newaccount newaccount = new Newaccount();
-            newaccount.ShowDialog();
+            newaccount.ShowDialog();     
         }
 
         private void checkremember_CheckedChanged(object sender, EventArgs e)
