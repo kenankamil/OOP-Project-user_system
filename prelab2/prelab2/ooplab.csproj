@@ -67,6 +67,7 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hash256.cs" />
     <Compile Include="Newaccount.cs">
       <SubType>Form</SubType>
     </Compile>

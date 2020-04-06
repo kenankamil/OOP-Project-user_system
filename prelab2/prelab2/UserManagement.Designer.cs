@@ -30,8 +30,6 @@
         {
             this.txtList = new System.Windows.Forms.TextBox();
             this.lbluserlist = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lstUserList = new System.Windows.Forms.ListBox();
             this.cmbusername = new System.Windows.Forms.ComboBox();
             this.btnsave = new System.Windows.Forms.Button();
             this.txtnewpassword = new System.Windows.Forms.TextBox();
@@ -39,6 +37,9 @@
             this.lblnewpassword = new System.Windows.Forms.Label();
             this.lblconfirm = new System.Windows.Forms.Label();
             this.lblmassage = new System.Windows.Forms.Label();
+            this.lblNewType = new System.Windows.Forms.Label();
+            this.btnSaveType = new System.Windows.Forms.Button();
+            this.cmbNewType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtList
@@ -59,27 +60,6 @@
             this.lbluserlist.Size = new System.Drawing.Size(49, 17);
             this.lbluserlist.TabIndex = 1;
             this.lbluserlist.Text = "Users:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(791, 43);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "List";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // lstUserList
-            // 
-            this.lstUserList.FormattingEnabled = true;
-            this.lstUserList.ItemHeight = 16;
-            this.lstUserList.Location = new System.Drawing.Point(655, 91);
-            this.lstUserList.Margin = new System.Windows.Forms.Padding(4);
-            this.lstUserList.Name = "lstUserList";
-            this.lstUserList.Size = new System.Drawing.Size(308, 84);
-            this.lstUserList.TabIndex = 3;
             // 
             // cmbusername
             // 
@@ -144,11 +124,44 @@
             this.lblmassage.Size = new System.Drawing.Size(0, 17);
             this.lblmassage.TabIndex = 10;
             // 
+            // lblNewType
+            // 
+            this.lblNewType.AutoSize = true;
+            this.lblNewType.Location = new System.Drawing.Point(255, 327);
+            this.lblNewType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNewType.Name = "lblNewType";
+            this.lblNewType.Size = new System.Drawing.Size(75, 17);
+            this.lblNewType.TabIndex = 11;
+            this.lblNewType.Text = "New Type:";
+            // 
+            // btnSaveType
+            // 
+            this.btnSaveType.Location = new System.Drawing.Point(369, 368);
+            this.btnSaveType.Name = "btnSaveType";
+            this.btnSaveType.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveType.TabIndex = 13;
+            this.btnSaveType.Text = "Save";
+            this.btnSaveType.UseVisualStyleBackColor = true;
+            this.btnSaveType.Click += new System.EventHandler(this.btnSaveType_Click);
+            // 
+            // cmbNewType
+            // 
+            this.cmbNewType.FormattingEnabled = true;
+            this.cmbNewType.Location = new System.Drawing.Point(348, 327);
+            this.cmbNewType.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbNewType.Name = "cmbNewType";
+            this.cmbNewType.Size = new System.Drawing.Size(160, 24);
+            this.cmbNewType.TabIndex = 14;
+            this.cmbNewType.Text = "Choose";
+            // 
             // UserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.cmbNewType);
+            this.Controls.Add(this.btnSaveType);
+            this.Controls.Add(this.lblNewType);
             this.Controls.Add(this.lblmassage);
             this.Controls.Add(this.lblconfirm);
             this.Controls.Add(this.lblnewpassword);
@@ -156,8 +169,6 @@
             this.Controls.Add(this.txtnewpassword);
             this.Controls.Add(this.btnsave);
             this.Controls.Add(this.cmbusername);
-            this.Controls.Add(this.lstUserList);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbluserlist);
             this.Controls.Add(this.txtList);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -173,8 +184,6 @@
 
         private System.Windows.Forms.TextBox txtList;
         private System.Windows.Forms.Label lbluserlist;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox lstUserList;
         private System.Windows.Forms.ComboBox cmbusername;
         private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.TextBox txtnewpassword;
@@ -182,5 +191,8 @@
         private System.Windows.Forms.Label lblnewpassword;
         private System.Windows.Forms.Label lblconfirm;
         private System.Windows.Forms.Label lblmassage;
+        private System.Windows.Forms.Label lblNewType;
+        private System.Windows.Forms.Button btnSaveType;
+        private System.Windows.Forms.ComboBox cmbNewType;
     }
 }

@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,15 +15,10 @@ namespace ooplab
 {
     public partial class UserManagement : Form
     {
-        int count2;
+        int i;
         public UserManagement()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
         }
 
         private void UserManagement_Load(object sender, EventArgs e)
@@ -31,14 +27,14 @@ namespace ooplab
             {
                 cmbusername.Items.Add(users.Userlist[i].Username);
             }
-           
+            cmbNewType.Items.Add("Admin");
+            cmbNewType.Items.Add("User");
+            cmbNewType.Items.Add("Part-time User");
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string temp = this.cmbusername.SelectedItem.ToString();
-            using (var reader = new StreamReader(@"Data\user.csv"))
             {
-                int count = 0;
                 //for(int i=0;i<users.Userlist.Count;i++)
                 //{
                 //     if (temp == users.Userlist[i].Username)
@@ -47,46 +43,61 @@ namespace ooplab
                 //        break;
                 //    }
                 //}
-                while (!reader.EndOfStream)
+                for (i = 0; i < users.Userlist.Count; i++)
                 {
-                    var line = reader.ReadLine();
-                    var values = line.Split(';');
-                    if (temp == values[0])
+                    if (temp == users.Userlist[i].Username)
                     {
-                        txtList.Text = "Username: " + users.Userlist[count].Username + Environment.NewLine + "Password: " +
-                            users.Userlist[count].Password + Environment.NewLine + "Type: " + users.Userlist[count].Type;
+                        txtList.Text = "Username: " + users.Userlist[i].Username + Environment.NewLine + "Password: " +
+                            users.Userlist[i].Password + Environment.NewLine + "Type: " + users.Userlist[i].Type;
                         break;
                     }
-                    count++;
-                    count2 = count;
-                }
+                }  
             }            
         }
         private void btnsave_Click(object sender, EventArgs e)
         {
             var csv = new StringBuilder();
-            Form1 form1 = new Form1();
             if (txtnewpassword.Text == txtconfirm.Text)
             {
-                using (var reader = new StreamReader(@"Data\user.csv"))
-                {
-                    File.Delete(@"Data\user.csv");
-                    users.Userlist[count2].Password = txtnewpassword.Text;
-                    while (!reader.EndOfStream)
+                File.Delete(@"Data\user.csv");
+                string fileName = @"Data\user.csv";
+                File.Create(fileName).Close();
+                    users.Userlist[i].Password =Hash256.ComputeSha256Hash(txtnewpassword.Text);
+                    for (int j = 0; j < users.Userlist.Count; j++)
                     {
-                        int i = 0;
-                        var line = reader.ReadLine();
-                        var newLine = string.Format("{0};{1};{2}",users.Userlist[i].Username, users.Userlist[i].Password, users.Userlist[i].Type, Environment.NewLine);
-                        csv.AppendLine(newLine);
-                        File.AppendAllText(@"Data\user.csv", csv.ToString());
-                        lblmassage.Text = "Success";
+                        {
+                        var newLine = string.Format("{0};{1};{2}", users.Userlist[j].Username,users.Userlist[j].Password, users.Userlist[j].Type, Environment.NewLine);
+                            csv.AppendLine(newLine);
+                            lblmassage.Text = "Success";
+                        txtList.Text = "Username: " + users.Userlist[i].Username + Environment.NewLine + "Password: " +
+                           users.Userlist[i].Password + Environment.NewLine + "Type: " + users.Userlist[i].Type;
                     }
-                }
+                    }
+                File.AppendAllText(@"Data\user.csv", csv.ToString());
             }
             else
                 lblmassage.Text = "Not Confirm"; 
         }
 
-     
+        private void btnSaveType_Click(object sender, EventArgs e)
+        {
+            var csv = new StringBuilder();
+            File.Delete(@"Data\user.csv");
+            string fileName = @"Data\user.csv";
+            File.Create(fileName).Close();
+            users.Userlist[i].Type = cmbNewType.SelectedItem.ToString();
+            for (int j = 0; j < users.Userlist.Count; j++)
+            {
+                {
+                    var newLine = string.Format("{0};{1};{2}", users.Userlist[j].Username, users.Userlist[j].Password, users.Userlist[j].Type, Environment.NewLine);
+                    csv.AppendLine(newLine);
+                    lblmassage.Text = "Success";
+                    txtList.Text = "Username: " + users.Userlist[i].Username + Environment.NewLine + "Password: " +
+                           users.Userlist[i].Password + Environment.NewLine + "Type: " + users.Userlist[i].Type;
+                }
+            }
+            File.AppendAllText(@"Data\user.csv", csv.ToString());
+        }
+
     }
 }
