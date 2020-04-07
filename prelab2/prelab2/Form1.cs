@@ -18,7 +18,9 @@ namespace prelab2
     public partial class Form1 : Form
     {
         User user = null;
-        Admin admin = new Admin();
+        private static User loaduser = new User();
+
+        public static User Loaduser { get => loaduser; set => loaduser = value; }
 
         public Form1()
         {
@@ -27,13 +29,12 @@ namespace prelab2
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            //string fileName = @"Data\user.csv";
-
-            //   // Check if file already exists. If yes, delete it.     
-            //    if (!File.Exists(fileName))
-            //    {
-            //    File.Create(fileName);
-            //    }
+            string fileName = @"Data\user.csv";
+            // Check if file already exists. If yes, delete it.     
+            if (!File.Exists(fileName))
+            {
+                File.Create(fileName).Close();
+            }
 
             using (var reader = new StreamReader(@"Data\user.csv"))
             {
@@ -46,6 +47,7 @@ namespace prelab2
                     temp.Username = values[0];
                     temp.Password = values[1];
                     temp.Type = values[2];
+                    temp.Phone_number = values[3];
                     users.Userlist.Add(temp);
                     //  Console.WriteLine(temp.Username + " " + temp.Password);
                 }
@@ -75,74 +77,6 @@ namespace prelab2
              */
         }
 
-        public static string ComputeSha256Hash(string rawData)
-        {
-            // Create a SHA256   
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                // ComputeHash - returns byte array  
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
-
-                // Convert byte array to a string   
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    builder.Append(bytes[i].ToString("x2"));
-                }
-                return builder.ToString();
-            }
-        }
-
-        private void checkremember_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sifre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btntsv_Click(object sender, EventArgs e)
-        {
-            //var fileContent = string.Empty;
-            //var filePath = string.Empty;
-
-            //using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            //{
-            //    openFileDialog.InitialDirectory = "C:\\Users\\kenan\\Desktop\\19_20_spring_oop2_152120161068\\prelab2\\prelab2\\bin\\Debug\\Data";
-            //    openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            //    openFileDialog.FilterIndex = 2;
-            //    openFileDialog.RestoreDirectory = true;
-
-            //    if (openFileDialog.ShowDialog() == DialogResult.OK)
-            //    {
-            //        //Get the path of specified file
-            //        filePath = openFileDialog.FileName;
-
-            //        //Read the contents of the file into a stream
-            //        var fileStream = openFileDialog.OpenFile();
-
-            //        using (StreamReader reader = new StreamReader(fileStream))
-            //        {
-            //            fileContent = reader.ReadToEnd();
-            //        }
-            //    }
-            //}
-
-            //MessageBox.Show(fileContent, "File Content at path: " + filePath, MessageBoxButtons.OK);
-
-        }
-        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void save_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-
         private void LOGİN_Click_1(object sender, EventArgs e)
         {
             string username = usernametxt.Text.ToString();
@@ -152,21 +86,23 @@ namespace prelab2
             {
                 if (item.Username == username && item.Password == password)
                 {
+                    UserManagement userManagement = new UserManagement();
                     user = item;
                     lblSonuc.Text = "Success";
                     lblSonuc.ForeColor = Color.Green;
                     // form2 = new Form2(item);
                     //  timer1.Interval = 3000;
                     //timer1.Start();     
-
-                    if (user.Type == "Admin")
+                    Loaduser.Username = item.Username;
+                    Loaduser.Type = item.Type;
+                    Loaduser.Phone_number = item.Phone_number;
+                    if (item.Type == "Admin")
                     {
+                        Admin admin = new Admin();
                         this.Hide();
                         admin.Show();
                     }
-                    else
-                        MessageBox.Show("Success, But there is only Admin Panel for this Week !");
-
+                                  
                 }
             }
 

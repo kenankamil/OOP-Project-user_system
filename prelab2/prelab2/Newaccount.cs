@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -40,7 +41,13 @@ namespace prelab2
                         if (username == values[0])
                         {
                             flag = 0;
-                            lblhata.Text = "Is already taken";
+                            lblhata.Text = "Username is already taken";
+                            break;
+                        }
+                        if (txtPhoneNumber.Text == values[3])
+                        {
+                            flag = 0;
+                            lblhata.Text = "Phone Number is already taken";
                             break;
                         }
                         type = "User";
@@ -48,7 +55,8 @@ namespace prelab2
                 }
                 if (flag == 99)
                 {
-                    var newLine = string.Format("{0};{1};{2}", username,password, type, Environment.NewLine);
+                    var newLine = string.Format("{0};{1};{2};{3}", username,password, type,
+                        txtPhoneNumber.Text, Environment.NewLine);
                     csv.AppendLine(newLine);
                     File.AppendAllText(@"Data\user.csv", csv.ToString());
                     lblhata.Text = "Success";

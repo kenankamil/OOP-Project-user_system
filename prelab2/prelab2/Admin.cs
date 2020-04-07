@@ -25,7 +25,6 @@ namespace ooplab
             UserManagement usermanagement = new UserManagement();
             this.Close();
             usermanagement.Show();         
-            
         }
 
         private void lblminimize_Click(object sender, EventArgs e)
@@ -36,6 +35,18 @@ namespace ooplab
         private void label1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPhoneBookEdit_Click(object sender, EventArgs e)
+        {
+            Phonebook phonebook = new Phonebook();
+            this.Close();
+            phonebook.Show();
         }
     }
 }
