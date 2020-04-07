@@ -45,6 +45,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPreviosPage = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -228,11 +229,22 @@
             this.panel2.Size = new System.Drawing.Size(640, 60);
             this.panel2.TabIndex = 26;
             // 
+            // btnPreviosPage
+            // 
+            this.btnPreviosPage.Location = new System.Drawing.Point(13, 437);
+            this.btnPreviosPage.Name = "btnPreviosPage";
+            this.btnPreviosPage.Size = new System.Drawing.Size(75, 23);
+            this.btnPreviosPage.TabIndex = 27;
+            this.btnPreviosPage.Text = "<--";
+            this.btnPreviosPage.UseVisualStyleBackColor = true;
+            this.btnPreviosPage.Click += new System.EventHandler(this.btnPreviosPage_Click);
+            // 
             // UserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 554);
+            this.Controls.Add(this.btnPreviosPage);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cmbNewType);
@@ -279,5 +291,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnPreviosPage;
     }
 }

@@ -42,8 +42,6 @@
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.txtusername = new System.Windows.Forms.TextBox();
             this.txtconfirm = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +60,7 @@
             this.btnnewaccount.BackColor = System.Drawing.Color.Black;
             this.btnnewaccount.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnnewaccount.ForeColor = System.Drawing.Color.White;
-            this.btnnewaccount.Location = new System.Drawing.Point(139, 367);
+            this.btnnewaccount.Location = new System.Drawing.Point(146, 287);
             this.btnnewaccount.Name = "btnnewaccount";
             this.btnnewaccount.Size = new System.Drawing.Size(75, 34);
             this.btnnewaccount.TabIndex = 6;
@@ -194,33 +192,12 @@
             this.txtconfirm.TabIndex = 31;
             this.txtconfirm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(83, 278);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 17);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "PHONE NUMBER:";
-            // 
-            // txtPhoneNumber
-            // 
-            this.txtPhoneNumber.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(86, 309);
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(216, 28);
-            this.txtPhoneNumber.TabIndex = 33;
-            this.txtPhoneNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // Newaccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(390, 505);
-            this.Controls.Add(this.txtPhoneNumber);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblhata);
             this.Controls.Add(this.txtconfirm);
             this.Controls.Add(this.btnnewaccount);
@@ -259,7 +236,5 @@
         private System.Windows.Forms.TextBox txtpassword;
         private System.Windows.Forms.TextBox txtusername;
         private System.Windows.Forms.TextBox txtconfirm;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtPhoneNumber;
     }
 }

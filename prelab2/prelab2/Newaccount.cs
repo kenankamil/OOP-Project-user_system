@@ -44,19 +44,12 @@ namespace prelab2
                             lblhata.Text = "Username is already taken";
                             break;
                         }
-                        if (txtPhoneNumber.Text == values[3])
-                        {
-                            flag = 0;
-                            lblhata.Text = "Phone Number is already taken";
-                            break;
-                        }
                         type = "User";
                     }
                 }
                 if (flag == 99)
                 {
-                    var newLine = string.Format("{0};{1};{2};{3}", username,password, type,
-                        txtPhoneNumber.Text, Environment.NewLine);
+                    var newLine = string.Format("{0};{1};{2}", username,password, type,Environment.NewLine);
                     csv.AppendLine(newLine);
                     File.AppendAllText(@"Data\user.csv", csv.ToString());
                     lblhata.Text = "Success";
