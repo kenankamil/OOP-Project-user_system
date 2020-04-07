@@ -47,7 +47,6 @@ namespace prelab2
                     temp.Username = values[0];
                     temp.Password = values[1];
                     temp.Type = values[2];
-                    temp.Phone_number = values[3];
                     users.Userlist.Add(temp);
                     //  Console.WriteLine(temp.Username + " " + temp.Password);
                 }
@@ -95,7 +94,6 @@ namespace prelab2
                     //timer1.Start();     
                     Loaduser.Username = item.Username;
                     Loaduser.Type = item.Type;
-                    Loaduser.Phone_number = item.Phone_number;
                     if (item.Type == "Admin")
                     {
                         Admin admin = new Admin();

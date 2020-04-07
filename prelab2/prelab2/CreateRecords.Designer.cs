@@ -40,6 +40,8 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblhata = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblName
@@ -53,10 +55,10 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(355, 179);
+            this.txtAddress.Location = new System.Drawing.Point(355, 204);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(100, 22);
-            this.txtAddress.TabIndex = 1;
+            this.txtAddress.TabIndex = 3;
             // 
             // lblSurname
             // 
@@ -70,7 +72,7 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(232, 182);
+            this.lblAddress.Location = new System.Drawing.Point(232, 207);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(60, 17);
             this.lblAddress.TabIndex = 3;
@@ -78,22 +80,22 @@
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(355, 134);
+            this.txtSurname.Location = new System.Drawing.Point(355, 129);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(100, 22);
-            this.txtSurname.TabIndex = 6;
+            this.txtSurname.TabIndex = 2;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(355, 89);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 22);
-            this.txtName.TabIndex = 7;
+            this.txtName.TabIndex = 1;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(232, 263);
+            this.lblEmail.Location = new System.Drawing.Point(232, 288);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(51, 17);
             this.lblEmail.TabIndex = 8;
@@ -102,7 +104,7 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(232, 223);
+            this.lblDescription.Location = new System.Drawing.Point(232, 248);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(83, 17);
             this.lblDescription.TabIndex = 9;
@@ -110,24 +112,24 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(355, 260);
+            this.txtEmail.Location = new System.Drawing.Point(355, 285);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 22);
-            this.txtEmail.TabIndex = 10;
+            this.txtEmail.TabIndex = 5;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(355, 220);
+            this.txtDescription.Location = new System.Drawing.Point(355, 245);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(100, 22);
-            this.txtDescription.TabIndex = 11;
+            this.txtDescription.TabIndex = 4;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(367, 301);
+            this.btnSave.Location = new System.Drawing.Point(364, 322);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 12;
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -135,16 +137,34 @@
             // lblhata
             // 
             this.lblhata.AutoSize = true;
-            this.lblhata.Location = new System.Drawing.Point(380, 348);
+            this.lblhata.Location = new System.Drawing.Point(361, 348);
             this.lblhata.Name = "lblhata";
             this.lblhata.Size = new System.Drawing.Size(0, 17);
             this.lblhata.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(232, 170);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 17);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Phone Number:";
+            // 
+            // txtPhoneNumber
+            // 
+            this.txtPhoneNumber.Location = new System.Drawing.Point(355, 165);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(100, 22);
+            this.txtPhoneNumber.TabIndex = 3;
             // 
             // CreateRecords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtPhoneNumber);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblhata);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtDescription);
@@ -179,5 +199,7 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblhata;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
     }
 }

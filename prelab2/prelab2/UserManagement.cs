@@ -122,5 +122,12 @@ namespace ooplab
         {
             this.Close();
         }
+
+        private void btnPreviosPage_Click(object sender, EventArgs e)
+        {
+            Admin admin = new Admin();
+            this.Close();
+            admin.Show();
+        }
     }
 }
