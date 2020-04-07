@@ -42,6 +42,8 @@
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.txtusername = new System.Windows.Forms.TextBox();
             this.txtconfirm = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +62,7 @@
             this.btnnewaccount.BackColor = System.Drawing.Color.Black;
             this.btnnewaccount.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnnewaccount.ForeColor = System.Drawing.Color.White;
-            this.btnnewaccount.Location = new System.Drawing.Point(162, 271);
+            this.btnnewaccount.Location = new System.Drawing.Point(139, 367);
             this.btnnewaccount.Name = "btnnewaccount";
             this.btnnewaccount.Size = new System.Drawing.Size(75, 34);
             this.btnnewaccount.TabIndex = 6;
@@ -73,7 +75,7 @@
             this.lblhata.AutoSize = true;
             this.lblhata.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblhata.ForeColor = System.Drawing.Color.Red;
-            this.lblhata.Location = new System.Drawing.Point(140, 319);
+            this.lblhata.Location = new System.Drawing.Point(117, 415);
             this.lblhata.Name = "lblhata";
             this.lblhata.Size = new System.Drawing.Size(0, 17);
             this.lblhata.TabIndex = 8;
@@ -137,7 +139,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 365);
+            this.panel2.Location = new System.Drawing.Point(0, 445);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(390, 60);
             this.panel2.TabIndex = 26;
@@ -192,22 +194,43 @@
             this.txtconfirm.TabIndex = 31;
             this.txtconfirm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(83, 278);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 17);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "PHONE NUMBER:";
+            // 
+            // txtPhoneNumber
+            // 
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtPhoneNumber.Location = new System.Drawing.Point(86, 309);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(216, 28);
+            this.txtPhoneNumber.TabIndex = 33;
+            this.txtPhoneNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Newaccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(390, 425);
+            this.ClientSize = new System.Drawing.Size(390, 505);
+            this.Controls.Add(this.txtPhoneNumber);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblhata);
             this.Controls.Add(this.txtconfirm);
+            this.Controls.Add(this.btnnewaccount);
             this.Controls.Add(this.lbsifre);
             this.Controls.Add(this.lbkullanıcıadi);
             this.Controls.Add(this.txtpassword);
             this.Controls.Add(this.txtusername);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblhata);
             this.Controls.Add(this.lbmassage);
-            this.Controls.Add(this.btnnewaccount);
             this.Controls.Add(this.lbconfirm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Newaccount";
@@ -236,5 +259,7 @@
         private System.Windows.Forms.TextBox txtpassword;
         private System.Windows.Forms.TextBox txtusername;
         private System.Windows.Forms.TextBox txtconfirm;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
     }
 }

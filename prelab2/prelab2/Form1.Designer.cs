@@ -62,7 +62,6 @@
             // 
             // save
             // 
-            this.save.FileOk += new System.ComponentModel.CancelEventHandler(this.save_FileOk);
             // 
             // checkremember
             // 

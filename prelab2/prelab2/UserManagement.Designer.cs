@@ -71,7 +71,7 @@
             // cmbusername
             // 
             this.cmbusername.FormattingEnabled = true;
-            this.cmbusername.Location = new System.Drawing.Point(132, 95);
+            this.cmbusername.Location = new System.Drawing.Point(69, 98);
             this.cmbusername.Margin = new System.Windows.Forms.Padding(4);
             this.cmbusername.Name = "cmbusername";
             this.cmbusername.Size = new System.Drawing.Size(160, 24);
