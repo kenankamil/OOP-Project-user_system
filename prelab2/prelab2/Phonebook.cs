@@ -38,13 +38,25 @@ namespace ooplab
             {
                 File.Create(fileName).Close();
             }
-        }
 
+        }
         private void BtnCreateRecords_Click(object sender, EventArgs e)
         {
             CreateRecords createRecords = new CreateRecords();
             this.Close();
             createRecords.Show();
+        }
+
+        private void btnList_Click(object sender, EventArgs e)
+        {
+            using (var reader = new StreamReader(@"Data\phonebook.csv"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    lsbPhoneBook.Items.Add(line + Environment.NewLine);
+                }
+            }
         }
     }
 }
