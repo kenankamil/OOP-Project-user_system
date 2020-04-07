@@ -100,7 +100,13 @@ namespace prelab2
                         this.Hide();
                         admin.Show();
                     }
-                                  
+                    if (item.Type == "User")
+                    {
+                        UserForm userform = new UserForm();
+                        this.Hide();
+                        userform.Show();
+                    }
+
                 }
             }
 

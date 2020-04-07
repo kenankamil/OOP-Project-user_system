@@ -40,7 +40,7 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblhata = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -142,14 +142,14 @@
             this.lblhata.Size = new System.Drawing.Size(0, 17);
             this.lblhata.TabIndex = 13;
             // 
-            // label1
+            // lblPhoneNumber
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(232, 170);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 17);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Phone Number:";
+            this.lblPhoneNumber.AutoSize = true;
+            this.lblPhoneNumber.Location = new System.Drawing.Point(232, 170);
+            this.lblPhoneNumber.Name = "lblPhoneNumber";
+            this.lblPhoneNumber.Size = new System.Drawing.Size(107, 17);
+            this.lblPhoneNumber.TabIndex = 14;
+            this.lblPhoneNumber.Text = "Phone Number:";
             // 
             // txtPhoneNumber
             // 
@@ -164,7 +164,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtPhoneNumber);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPhoneNumber);
             this.Controls.Add(this.lblhata);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtDescription);
@@ -199,7 +199,7 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblhata;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPhoneNumber;
         private System.Windows.Forms.TextBox txtPhoneNumber;
     }
 }

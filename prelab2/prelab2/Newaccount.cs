@@ -16,7 +16,7 @@ namespace prelab2
 {
     public partial class Newaccount : Form
     {
-        User user = new User();  
+        User user = new User();
 
         public Newaccount()
         {
@@ -24,7 +24,7 @@ namespace prelab2
         }
         private void btnnewaccount_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();    
+            Form1 form1 = new Form1();
             var csv = new StringBuilder();
             if (txtpassword.Text == txtconfirm.Text)
             {
@@ -49,7 +49,7 @@ namespace prelab2
                 }
                 if (flag == 99)
                 {
-                    var newLine = string.Format("{0};{1};{2}", username,password, type,Environment.NewLine);
+                    var newLine = string.Format("{0}{1};{2}{3};{4}{5}", "Username: ", username, "Password: ", password, "Type: ", type, Environment.NewLine);
                     csv.AppendLine(newLine);
                     File.AppendAllText(@"Data\user.csv", csv.ToString());
                     lblhata.Text = "Success";
