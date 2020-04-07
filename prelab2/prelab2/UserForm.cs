@@ -8,25 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace prelab2
+namespace ooplab
 {
-    public partial class Form2 : Form
+    public partial class UserForm : Form
     {
-        User user;
-        public Form2(User user)
+        public UserForm()
         {
-            this.user = user;
             InitializeComponent();
         }
-
-        private void Form2_Load(object sender, EventArgs e)
+        private void UserForm_Load(object sender, EventArgs e)
         {
-            lblUsername.Text = user.Username;
+
         }
 
-        private void lblPassWord_Click(object sender, EventArgs e)
+        private void btnPhoneBook_Click(object sender, EventArgs e)
         {
-
+            Phonebook phonebook = new Phonebook();
+            this.Close();
+            phonebook.Show();
         }
     }
 }

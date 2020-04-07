@@ -59,7 +59,7 @@ namespace ooplab
             if (Form1.Loaduser.Type == "Admin")
             {
                 var csv = new StringBuilder();
-  
+
                 File.Delete(@"Data\user.csv");
                 string fileName = @"Data\user.csv";
                 File.Create(fileName).Close();
@@ -70,7 +70,7 @@ namespace ooplab
                     {
                         {
                             var newLine = string.Format("{0};{1};{2};{3}", users.Userlist[j].Username, users.Userlist[j].Password,
-                                users.Userlist[j].Type,users.Userlist[j].Phone_number, Environment.NewLine);
+                                users.Userlist[j].Type, users.Userlist[j].Phone_number, Environment.NewLine);
                             csv.AppendLine(newLine);
                             lblmassage.Text = "Success";
                             txtList.Text = "Username: " + users.Userlist[i].Username + Environment.NewLine + "Password: " +
@@ -84,8 +84,8 @@ namespace ooplab
                     lblmassage.Text = "Not Confirm";
             }
             else
-                lblmassage.Text = "You can't do this, you are not an Admin";              
-            
+                lblmassage.Text = "You can't do this, you are not an Admin";
+
         }
 
         private void btnSaveType_Click(object sender, EventArgs e)
@@ -101,7 +101,7 @@ namespace ooplab
                 {
                     {
                         var newLine = string.Format("{0};{1};{2};{3}", users.Userlist[j].Username, users.Userlist[j].Password,
-                            users.Userlist[j].Type,users.Userlist[j].Phone_number, Environment.NewLine);
+                            users.Userlist[j].Type, users.Userlist[j].Phone_number, Environment.NewLine);
                         csv.AppendLine(newLine);
                         lblmassage.Text = "Success";
                         txtList.Text = "Username: " + users.Userlist[i].Username + Environment.NewLine + "Password: " +

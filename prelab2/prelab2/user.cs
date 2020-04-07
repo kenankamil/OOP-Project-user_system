@@ -14,7 +14,7 @@ namespace prelab2
         private string type;
         private string phone_number;
 
-        public User(string username, string password,string type)
+        public User(string username, string password, string type)
         {
             this.username = username;
             this.password = password;

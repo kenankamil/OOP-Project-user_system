@@ -37,13 +37,14 @@ namespace ooplab
             }
             else
             {
-                Form1.Loaduser.Phone_number = String.Format("{0:(###) ### ## ##}", Convert.ToInt64(txtPhoneNumber.Text));
                 if (match.Success)
                 {
                     Phonebook phonebook = new Phonebook();
                     var csv = new StringBuilder();
-                    var newLine = string.Format("{0};{1};{2};{3};{4};{5}", txtName.Text, txtSurname.Text, Form1.Loaduser.Phone_number, txtAddress.Text,
-                       txtDescription.Text, txtEmail.Text, Environment.NewLine);
+                    var newLine = string.Format("{0}{1};{2}{3};{4}{5};{6}{7};{8}{9};{10}{11};{12}{13}", "Name: ", txtName.Text, "Surname: ",
+                        txtSurname.Text, "Phone Number: ", String.Format("{0:(###) ### ## ##}", Convert.ToInt64(txtPhoneNumber.Text)),
+                        "Address: ", txtAddress.Text, "Description: ", txtDescription.Text, "E-mail: ", txtEmail.Text,
+                        "Created By ", Form1.Loaduser.Username, Environment.NewLine);
                     csv.AppendLine(newLine);
                     File.AppendAllText(@"Data\phonebook.csv", csv.ToString());
                     lblhata.Text = "Success";
@@ -55,7 +56,6 @@ namespace ooplab
                     lblhata.Text = "E-mail is not correct";
                 }
             }
-            
         }
     }
 
