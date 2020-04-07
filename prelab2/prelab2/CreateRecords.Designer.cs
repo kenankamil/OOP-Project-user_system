@@ -47,7 +47,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(232, 89);
+            this.lblName.Location = new System.Drawing.Point(12, 20);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(49, 17);
             this.lblName.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(355, 204);
+            this.txtAddress.Location = new System.Drawing.Point(135, 135);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(100, 22);
             this.txtAddress.TabIndex = 3;
@@ -63,7 +63,7 @@
             // lblSurname
             // 
             this.lblSurname.AutoSize = true;
-            this.lblSurname.Location = new System.Drawing.Point(232, 134);
+            this.lblSurname.Location = new System.Drawing.Point(12, 65);
             this.lblSurname.Name = "lblSurname";
             this.lblSurname.Size = new System.Drawing.Size(69, 17);
             this.lblSurname.TabIndex = 2;
@@ -72,7 +72,7 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(232, 207);
+            this.lblAddress.Location = new System.Drawing.Point(12, 138);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(60, 17);
             this.lblAddress.TabIndex = 3;
@@ -80,14 +80,14 @@
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(355, 129);
+            this.txtSurname.Location = new System.Drawing.Point(135, 60);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(100, 22);
             this.txtSurname.TabIndex = 2;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(355, 89);
+            this.txtName.Location = new System.Drawing.Point(135, 20);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 22);
             this.txtName.TabIndex = 1;
@@ -95,7 +95,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(232, 288);
+            this.lblEmail.Location = new System.Drawing.Point(12, 219);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(51, 17);
             this.lblEmail.TabIndex = 8;
@@ -104,7 +104,7 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(232, 248);
+            this.lblDescription.Location = new System.Drawing.Point(12, 179);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(83, 17);
             this.lblDescription.TabIndex = 9;
@@ -112,21 +112,21 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(355, 285);
+            this.txtEmail.Location = new System.Drawing.Point(135, 216);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 22);
             this.txtEmail.TabIndex = 5;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(355, 245);
+            this.txtDescription.Location = new System.Drawing.Point(135, 176);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(100, 22);
             this.txtDescription.TabIndex = 4;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(364, 322);
+            this.btnSave.Location = new System.Drawing.Point(144, 253);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 6;
@@ -137,7 +137,7 @@
             // lblhata
             // 
             this.lblhata.AutoSize = true;
-            this.lblhata.Location = new System.Drawing.Point(361, 348);
+            this.lblhata.Location = new System.Drawing.Point(141, 274);
             this.lblhata.Name = "lblhata";
             this.lblhata.Size = new System.Drawing.Size(0, 17);
             this.lblhata.TabIndex = 13;
@@ -145,7 +145,7 @@
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.AutoSize = true;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(232, 170);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(12, 101);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(107, 17);
             this.lblPhoneNumber.TabIndex = 14;
@@ -153,7 +153,7 @@
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(355, 165);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(135, 96);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(100, 22);
             this.txtPhoneNumber.TabIndex = 3;
@@ -162,7 +162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(363, 345);
             this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.lblPhoneNumber);
             this.Controls.Add(this.lblhata);
@@ -178,6 +178,7 @@
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.lblName);
             this.Name = "CreateRecords";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateRecords";
             this.Load += new System.EventHandler(this.CreateRecords_Load);
             this.ResumeLayout(false);

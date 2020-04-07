@@ -106,7 +106,6 @@ namespace prelab2
                         this.Hide();
                         userform.Show();
                     }
-
                 }
             }
 

@@ -30,6 +30,9 @@
         {
             this.btnCreateRecords = new System.Windows.Forms.Button();
             this.lblCreateRecords = new System.Windows.Forms.Label();
+            this.lblList = new System.Windows.Forms.Label();
+            this.btnList = new System.Windows.Forms.Button();
+            this.lsbPhoneBook = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnCreateRecords
@@ -51,14 +54,46 @@
             this.lblCreateRecords.TabIndex = 1;
             this.lblCreateRecords.Text = "Create Records:";
             // 
+            // lblList
+            // 
+            this.lblList.AutoSize = true;
+            this.lblList.Location = new System.Drawing.Point(12, 102);
+            this.lblList.Name = "lblList";
+            this.lblList.Size = new System.Drawing.Size(34, 17);
+            this.lblList.TabIndex = 2;
+            this.lblList.Text = "List:";
+            // 
+            // btnList
+            // 
+            this.btnList.Location = new System.Drawing.Point(128, 96);
+            this.btnList.Name = "btnList";
+            this.btnList.Size = new System.Drawing.Size(75, 23);
+            this.btnList.TabIndex = 3;
+            this.btnList.Text = "List";
+            this.btnList.UseVisualStyleBackColor = true;
+            this.btnList.Click += new System.EventHandler(this.btnList_Click);
+            // 
+            // lsbPhoneBook
+            // 
+            this.lsbPhoneBook.FormattingEnabled = true;
+            this.lsbPhoneBook.ItemHeight = 16;
+            this.lsbPhoneBook.Location = new System.Drawing.Point(248, 12);
+            this.lsbPhoneBook.Name = "lsbPhoneBook";
+            this.lsbPhoneBook.Size = new System.Drawing.Size(671, 228);
+            this.lsbPhoneBook.TabIndex = 4;
+            // 
             // Phonebook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1125, 398);
+            this.Controls.Add(this.lsbPhoneBook);
+            this.Controls.Add(this.btnList);
+            this.Controls.Add(this.lblList);
             this.Controls.Add(this.lblCreateRecords);
             this.Controls.Add(this.btnCreateRecords);
             this.Name = "Phonebook";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phonebook";
             this.Load += new System.EventHandler(this.Phonebook_Load);
             this.ResumeLayout(false);
@@ -70,5 +105,8 @@
 
         private System.Windows.Forms.Button btnCreateRecords;
         private System.Windows.Forms.Label lblCreateRecords;
+        private System.Windows.Forms.Label lblList;
+        private System.Windows.Forms.Button btnList;
+        private System.Windows.Forms.ListBox lsbPhoneBook;
     }
 }

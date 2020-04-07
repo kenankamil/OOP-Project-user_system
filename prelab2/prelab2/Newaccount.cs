@@ -49,7 +49,7 @@ namespace prelab2
                 }
                 if (flag == 99)
                 {
-                    var newLine = string.Format("{0}{1};{2}{3};{4}{5}", "Username: ", username, "Password: ", password, "Type: ", type, Environment.NewLine);
+                    var newLine = string.Format("{0};{1};{2}", username, password, type, Environment.NewLine);
                     csv.AppendLine(newLine);
                     File.AppendAllText(@"Data\user.csv", csv.ToString());
                     lblhata.Text = "Success";
