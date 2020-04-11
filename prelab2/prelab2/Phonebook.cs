@@ -54,9 +54,18 @@ namespace ooplab
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
-                    lsbPhoneBook.Items.Add(line + Environment.NewLine);
+                    var values = line.Split(';');
+                    if (values[6] == "Created By " + Form1.Loaduser.Username) {
+                        lsbPhoneBook.Items.Add(line + Environment.NewLine);
+                        listView1.Items.Add(line + Environment.NewLine);
+                    }
                 }
             }
+        }
+
+        private void lsbPhoneBook_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
