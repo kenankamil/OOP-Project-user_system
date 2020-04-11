@@ -44,6 +44,12 @@ namespace prelab2
                             lblhata.Text = "Username is already taken";
                             break;
                         }
+                        if (username =="" || txtpassword.Text=="")
+                        {
+                            flag = 0;
+                            lblhata.Text = "Please write your username and password";
+                            break;
+                        }
                         type = "User";
                     }
                 }

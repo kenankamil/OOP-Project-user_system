@@ -35,6 +35,10 @@ namespace ooplab
                 lblhata.Text = "Please enter only numbers for Phone Number!";
                 txtPhoneNumber.Text = txtPhoneNumber.Text.Remove(txtPhoneNumber.Text.Length - 1);
             }
+            if (txtPhoneNumber.Text.Length != 10)
+            {
+                lblhata.Text = "Please enter 10 characters!";
+            }
             else
             {
                 if (match.Success)

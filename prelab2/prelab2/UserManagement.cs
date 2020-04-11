@@ -70,7 +70,7 @@ namespace ooplab
                     {
                         {
                             var newLine = string.Format("{0};{1};{2};{3}", users.Userlist[j].Username, users.Userlist[j].Password,
-                                users.Userlist[j].Type, users.Userlist[j].Phone_number, Environment.NewLine);
+                                users.Userlist[j].Type, Environment.NewLine);
                             csv.AppendLine(newLine);
                             lblmassage.Text = "Success";
                             txtList.Text = "Username: " + users.Userlist[i].Username + Environment.NewLine + "Password: " +
@@ -101,7 +101,7 @@ namespace ooplab
                 {
                     {
                         var newLine = string.Format("{0};{1};{2};{3}", users.Userlist[j].Username, users.Userlist[j].Password,
-                            users.Userlist[j].Type, users.Userlist[j].Phone_number, Environment.NewLine);
+                            users.Userlist[j].Type, Environment.NewLine);
                         csv.AppendLine(newLine);
                         lblmassage.Text = "Success";
                         txtList.Text = "Username: " + users.Userlist[i].Username + Environment.NewLine + "Password: " +
