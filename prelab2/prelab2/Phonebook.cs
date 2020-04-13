@@ -93,6 +93,28 @@ namespace ooplab
                 }
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            // Delete the slected row
+            Int32 selectedRowCount = 0;
+            selectedRowCount = dgwRecords.Rows.GetRowCount(DataGridViewElementStates.Selected) - 1;
+            for (int i = 0; i < PhonebookRecords.PhoneBook.Count; i++)
+            {
+                if (dgwRecords.Rows.Count != 0 && selectedRowCount != -1)
+                {
+                    if (PhonebookRecords.PhoneBook[i].Name1 == dgwRecords.Rows[selectedRowCount].Cells[0].Value.ToString())
+                    {
+                        PhonebookRecords.PhoneBook.RemoveAt(i);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("You must choose a record!", "ERROR");
+                    break;
+                }
+            }
+        }
     }
 }
 

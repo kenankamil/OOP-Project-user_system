@@ -29,6 +29,11 @@ namespace prelab2
 
         public void Form1_Load(object sender, EventArgs e)
         {
+            string root = @"Data";
+            if (!Directory.Exists(root))
+            {
+                Directory.CreateDirectory(root);
+            }
             string fileName = @"Data\user.csv";
             // Check if file already exists. If yes, delete it.     
             if (!File.Exists(fileName))
