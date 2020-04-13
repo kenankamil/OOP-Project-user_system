@@ -32,6 +32,7 @@
             this.btnList = new System.Windows.Forms.Button();
             this.dgwRecords = new System.Windows.Forms.DataGridView();
             this.lblInfo = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwRecords)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,11 +74,22 @@
             this.lblInfo.Size = new System.Drawing.Size(0, 17);
             this.lblInfo.TabIndex = 6;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(37, 132);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // Phonebook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1125, 398);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.dgwRecords);
             this.Controls.Add(this.btnList);
@@ -98,5 +110,6 @@
         private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.DataGridView dgwRecords;
         private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
