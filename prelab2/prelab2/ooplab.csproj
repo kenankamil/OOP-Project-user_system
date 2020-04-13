@@ -86,6 +86,7 @@
     <Compile Include="Phonebook.Designer.cs">
       <DependentUpon>Phonebook.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhonebookRecords.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

@@ -19,6 +19,7 @@ namespace ooplab
         private string address;
         private string description;
         private string e_mail;
+        string fileNamephonebook = @"Data\phonebook.csv";
         public Phonebook()
         {
             InitializeComponent();
@@ -32,13 +33,40 @@ namespace ooplab
 
         private void Phonebook_Load(object sender, EventArgs e)
         {
-            string fileName = @"Data\phonebook.csv";
-            // Check if file already exists. If yes, delete it.     
-            if (!File.Exists(fileName))
+            // Can change something in data grid view(UPDATE)
+            lblInfo.Text = "Don't forget to save after DELETE and UPTADE";
+            if (!File.Exists(fileNamephonebook))
             {
-                File.Create(fileName).Close();
+                File.Create(fileNamephonebook).Close();
             }
+            dgwRecords.ColumnCount = 6;
+            dgwRecords.Columns[0].Name = "Name";
+            dgwRecords.Columns[1].Name = "Surname";
+            dgwRecords.Columns[2].Name = "Phone number";
+            dgwRecords.Columns[3].Name = "Address";
+            dgwRecords.Columns[4].Name = "Description";
+            dgwRecords.Columns[5].Name = "E-mail";
+            dgwRecords.AllowUserToDeleteRows = true;
+            dgwRecords.AllowUserToAddRows = false;
+            //Save to List Phonebook from phonebook.csv
+            using (var reader = new StreamReader(@"Data\phonebook.csv"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(';');
 
+                    PhonebookRecords temp = new PhonebookRecords();
+                    temp.Name1 = values[0];
+                    temp.Surname1 = values[1];
+                    temp.Phone_number1 = values[2];
+                    temp.Address1 = values[3];
+                    temp.Description1 = values[4];
+                    temp.Email1 = values[5];
+                    temp.LoadUser1 = values[6];
+                    PhonebookRecords.PhoneBook.Add(temp);
+                }
+            }
         }
         private void BtnCreateRecords_Click(object sender, EventArgs e)
         {
@@ -46,26 +74,25 @@ namespace ooplab
             this.Close();
             createRecords.Show();
         }
-
         private void btnList_Click(object sender, EventArgs e)
         {
+            dgwRecords.Rows.Clear();
+            //List the Phonebook of own user
             using (var reader = new StreamReader(@"Data\phonebook.csv"))
             {
                 while (!reader.EndOfStream)
                 {
+                    string[] temp = { };
                     var line = reader.ReadLine();
                     var values = line.Split(';');
-                    if (values[6] == "Created By " + Form1.Loaduser.Username) {
-                        lsbPhoneBook.Items.Add(line + Environment.NewLine);
-                        listView1.Items.Add(line + Environment.NewLine);
+                    if (values[6] == Form1.Loaduser.Username)
+                    {
+                        temp = new string[] { values[0], values[1], values[2], values[3], values[4], values[5] };
+                        dgwRecords.Rows.Add(temp);
                     }
                 }
             }
         }
-
-        private void lsbPhoneBook_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
+
