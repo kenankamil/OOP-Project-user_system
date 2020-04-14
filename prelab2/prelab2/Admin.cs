@@ -48,12 +48,5 @@ namespace ooplab
             this.Close();
             phonebook.Show();
         }
-
-        private void lblNotes_Click(object sender, EventArgs e)
-        {
-            Notes notes = new Notes();
-            this.Close();
-            notes.Show();
-        }
     }
 }
