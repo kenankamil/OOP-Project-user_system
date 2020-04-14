@@ -14,21 +14,11 @@ namespace ooplab
 {
     public partial class Phonebook : Form
     {
-        private string name;
-        private string surname;
-        private string address;
-        private string description;
-        private string e_mail;
         string fileNamephonebook = @"Data\phonebook.csv";
         public Phonebook()
         {
             InitializeComponent();
         }
-        public string Name1 { get => name; set => name = value; }
-        public string Surname { get => surname; set => surname = value; }
-        public string Address { get => address; set => address = value; }
-        public string Description { get => description; set => description = value; }
-        public string E_mail { get => e_mail; set => e_mail = value; }
         // Can change something in data grid view(UPDATE)
         private void Phonebook_Load(object sender, EventArgs e)
         {

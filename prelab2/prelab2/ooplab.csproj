@@ -80,6 +80,18 @@
     <Compile Include="Newaccount.Designer.cs">
       <DependentUpon>Newaccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Notes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notes.Designer.cs">
+      <DependentUpon>Notes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Part-time_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Part-time_User.Designer.cs">
+      <DependentUpon>Part-time_User.cs</DependentUpon>
+    </Compile>
     <Compile Include="Phonebook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +141,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Newaccount.resx">
       <DependentUpon>Newaccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notes.resx">
+      <DependentUpon>Notes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Part-time_User.resx">
+      <DependentUpon>Part-time_User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Phonebook.resx">
       <DependentUpon>Phonebook.cs</DependentUpon>
