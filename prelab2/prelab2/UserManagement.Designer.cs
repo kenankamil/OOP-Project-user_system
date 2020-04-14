@@ -231,12 +231,15 @@
             // 
             // btnPreviosPage
             // 
+            this.btnPreviosPage.BackColor = System.Drawing.SystemColors.WindowText;
+            this.btnPreviosPage.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnPreviosPage.ForeColor = System.Drawing.Color.White;
             this.btnPreviosPage.Location = new System.Drawing.Point(13, 437);
             this.btnPreviosPage.Name = "btnPreviosPage";
-            this.btnPreviosPage.Size = new System.Drawing.Size(75, 23);
+            this.btnPreviosPage.Size = new System.Drawing.Size(75, 34);
             this.btnPreviosPage.TabIndex = 27;
             this.btnPreviosPage.Text = "<--";
-            this.btnPreviosPage.UseVisualStyleBackColor = true;
+            this.btnPreviosPage.UseVisualStyleBackColor = false;
             this.btnPreviosPage.Click += new System.EventHandler(this.btnPreviosPage_Click);
             // 
             // UserManagement
