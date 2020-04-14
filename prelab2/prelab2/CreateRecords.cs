@@ -66,17 +66,14 @@ namespace ooplab
                 }
             }
         }
-
         private void lblMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
-
         private void lblClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnPreviosPage_Click(object sender, EventArgs e)
         {
             Phonebook goback= new Phonebook();

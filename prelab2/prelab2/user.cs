@@ -8,7 +8,6 @@ namespace prelab2
 {
     public class User
     {
-
         private string username;
         private string password;
         private string type;
@@ -19,7 +18,6 @@ namespace prelab2
             this.type = type;
         }
         public User() { }
-
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
         public string Type { get => type; set => type = value; }

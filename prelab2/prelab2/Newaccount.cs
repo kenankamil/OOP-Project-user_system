@@ -17,7 +17,6 @@ namespace prelab2
     public partial class Newaccount : Form
     {
         User user = new User();
-
         public Newaccount()
         {
             InitializeComponent();
@@ -67,20 +66,23 @@ namespace prelab2
             else
                 lbmassage.Text = "Not Confirm!!";
         }
-
         private void Newaccount_Load(object sender, EventArgs e)
         {
             Form1.ActiveForm.Hide();
         }
-
         private void lblminimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void btnPreviosPage_Click(object sender, EventArgs e)
+        {
+            Form1 goback = new Form1();
+            this.Close();
+            goback.Show();
         }
     }
 }

@@ -20,7 +20,6 @@ namespace ooplab
         {
             InitializeComponent();
         }
-
         private void UserManagement_Load(object sender, EventArgs e)
         {
             for (int i = 0; i < users.Userlist.Count; i++)
@@ -59,7 +58,6 @@ namespace ooplab
             if (Form1.Loaduser.Type == "Admin")
             {
                 var csv = new StringBuilder();
-
                 File.Delete(@"Data\user.csv");
                 string fileName = @"Data\user.csv";
                 File.Create(fileName).Close();
@@ -85,9 +83,7 @@ namespace ooplab
             }
             else
                 lblmassage.Text = "You can't do this, you are not an Admin";
-
         }
-
         private void btnSaveType_Click(object sender, EventArgs e)
         {
             if (Form1.Loaduser.Type == "Admin")
@@ -112,17 +108,14 @@ namespace ooplab
                 lblmassage.Text = "Accsess";
             }
         }
-
         private void lblminimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
-
         private void lblclose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnPreviosPage_Click(object sender, EventArgs e)
         {
             Admin admin = new Admin();

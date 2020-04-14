@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPhoneBookEdit = new System.Windows.Forms.Button();
+            this.BtnNotes = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             this.btnUserManagement.BackColor = System.Drawing.Color.Black;
             this.btnUserManagement.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserManagement.ForeColor = System.Drawing.Color.White;
-            this.btnUserManagement.Location = new System.Drawing.Point(107, 193);
+            this.btnUserManagement.Location = new System.Drawing.Point(107, 162);
             this.btnUserManagement.Name = "btnUserManagement";
             this.btnUserManagement.Size = new System.Drawing.Size(171, 45);
             this.btnUserManagement.TabIndex = 0;
@@ -67,7 +68,7 @@
             // 
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblId.Location = new System.Drawing.Point(119, 133);
+            this.lblId.Location = new System.Drawing.Point(129, 102);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(42, 17);
             this.lblId.TabIndex = 2;
@@ -77,7 +78,7 @@
             // 
             this.lblType1.AutoSize = true;
             this.lblType1.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblType1.Location = new System.Drawing.Point(198, 133);
+            this.lblType1.Location = new System.Drawing.Point(208, 102);
             this.lblType1.Name = "lblType1";
             this.lblType1.Size = new System.Drawing.Size(52, 17);
             this.lblType1.TabIndex = 3;
@@ -144,7 +145,7 @@
             this.btnPhoneBookEdit.BackColor = System.Drawing.SystemColors.WindowText;
             this.btnPhoneBookEdit.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPhoneBookEdit.ForeColor = System.Drawing.Color.White;
-            this.btnPhoneBookEdit.Location = new System.Drawing.Point(107, 261);
+            this.btnPhoneBookEdit.Location = new System.Drawing.Point(107, 230);
             this.btnPhoneBookEdit.Name = "btnPhoneBookEdit";
             this.btnPhoneBookEdit.Size = new System.Drawing.Size(171, 40);
             this.btnPhoneBookEdit.TabIndex = 29;
@@ -152,11 +153,25 @@
             this.btnPhoneBookEdit.UseVisualStyleBackColor = false;
             this.btnPhoneBookEdit.Click += new System.EventHandler(this.btnPhoneBookEdit_Click);
             // 
+            // BtnNotes
+            // 
+            this.BtnNotes.BackColor = System.Drawing.SystemColors.WindowText;
+            this.BtnNotes.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnNotes.ForeColor = System.Drawing.Color.White;
+            this.BtnNotes.Location = new System.Drawing.Point(107, 293);
+            this.BtnNotes.Name = "BtnNotes";
+            this.BtnNotes.Size = new System.Drawing.Size(171, 40);
+            this.BtnNotes.TabIndex = 30;
+            this.BtnNotes.Text = "Notes";
+            this.BtnNotes.UseVisualStyleBackColor = false;
+            this.BtnNotes.Click += new System.EventHandler(this.BtnNotes_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 420);
+            this.Controls.Add(this.BtnNotes);
             this.Controls.Add(this.btnPhoneBookEdit);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -168,7 +183,6 @@
             this.Name = "Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
-            this.Load += new System.EventHandler(this.Admin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -188,5 +202,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnPhoneBookEdit;
+        private System.Windows.Forms.Button BtnNotes;
     }
 }

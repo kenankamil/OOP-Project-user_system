@@ -36,12 +36,13 @@
             this.lblsignup = new System.Windows.Forms.Label();
             this.lblminimize = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.lbsifre = new System.Windows.Forms.Label();
             this.lbkullanıcıadi = new System.Windows.Forms.Label();
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.txtusername = new System.Windows.Forms.TextBox();
             this.txtconfirm = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPreviosPage = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +74,7 @@
             this.lblhata.AutoSize = true;
             this.lblhata.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblhata.ForeColor = System.Drawing.Color.Red;
-            this.lblhata.Location = new System.Drawing.Point(117, 415);
+            this.lblhata.Location = new System.Drawing.Point(83, 344);
             this.lblhata.Name = "lblhata";
             this.lblhata.Size = new System.Drawing.Size(0, 17);
             this.lblhata.TabIndex = 8;
@@ -133,15 +134,6 @@
             this.label1.Text = "X";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 385);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(390, 60);
-            this.panel2.TabIndex = 26;
-            // 
             // lbsifre
             // 
             this.lbsifre.AutoSize = true;
@@ -192,12 +184,36 @@
             this.txtconfirm.TabIndex = 31;
             this.txtconfirm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 385);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(390, 60);
+            this.panel2.TabIndex = 32;
+            // 
+            // btnPreviosPage
+            // 
+            this.btnPreviosPage.BackColor = System.Drawing.SystemColors.WindowText;
+            this.btnPreviosPage.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnPreviosPage.ForeColor = System.Drawing.Color.White;
+            this.btnPreviosPage.Location = new System.Drawing.Point(12, 344);
+            this.btnPreviosPage.Name = "btnPreviosPage";
+            this.btnPreviosPage.Size = new System.Drawing.Size(75, 34);
+            this.btnPreviosPage.TabIndex = 33;
+            this.btnPreviosPage.Text = "<--";
+            this.btnPreviosPage.UseVisualStyleBackColor = false;
+            this.btnPreviosPage.Click += new System.EventHandler(this.btnPreviosPage_Click);
+            // 
             // Newaccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(390, 445);
+            this.Controls.Add(this.btnPreviosPage);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblhata);
             this.Controls.Add(this.txtconfirm);
             this.Controls.Add(this.btnnewaccount);
@@ -205,7 +221,6 @@
             this.Controls.Add(this.lbkullanıcıadi);
             this.Controls.Add(this.txtpassword);
             this.Controls.Add(this.txtusername);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbmassage);
             this.Controls.Add(this.lbconfirm);
@@ -229,12 +244,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblminimize;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblsignup;
         private System.Windows.Forms.Label lbsifre;
         private System.Windows.Forms.Label lbkullanıcıadi;
         private System.Windows.Forms.TextBox txtpassword;
         private System.Windows.Forms.TextBox txtusername;
         private System.Windows.Forms.TextBox txtconfirm;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnPreviosPage;
     }
 }

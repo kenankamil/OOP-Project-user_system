@@ -16,26 +16,25 @@ namespace ooplab
         {
             InitializeComponent();
         }
-        private void UserForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnPhoneBook_Click(object sender, EventArgs e)
         {
             Phonebook phonebook = new Phonebook();
             this.Close();
             phonebook.Show();
         }
-
         private void lblminimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
-
         private void lblClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void BtnNotes_Click(object sender, EventArgs e)
+        {
+            Notes enternotes = new Notes();
+            this.Close();
+            enternotes.Show();
         }
     }
 }
