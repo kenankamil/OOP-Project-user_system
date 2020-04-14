@@ -37,7 +37,6 @@
             this.lblminimize = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnPhoneBookEdit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -140,25 +139,17 @@
             this.panel2.Size = new System.Drawing.Size(390, 60);
             this.panel2.TabIndex = 27;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(13, 264);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 17);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Phone Book:";
-            // 
             // btnPhoneBookEdit
             // 
-            this.btnPhoneBookEdit.Location = new System.Drawing.Point(117, 261);
+            this.btnPhoneBookEdit.BackColor = System.Drawing.SystemColors.WindowText;
+            this.btnPhoneBookEdit.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnPhoneBookEdit.ForeColor = System.Drawing.Color.White;
+            this.btnPhoneBookEdit.Location = new System.Drawing.Point(107, 261);
             this.btnPhoneBookEdit.Name = "btnPhoneBookEdit";
-            this.btnPhoneBookEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnPhoneBookEdit.Size = new System.Drawing.Size(171, 40);
             this.btnPhoneBookEdit.TabIndex = 29;
-            this.btnPhoneBookEdit.Text = "Edit";
-            this.btnPhoneBookEdit.UseVisualStyleBackColor = true;
+            this.btnPhoneBookEdit.Text = "PhoneBook";
+            this.btnPhoneBookEdit.UseVisualStyleBackColor = false;
             this.btnPhoneBookEdit.Click += new System.EventHandler(this.btnPhoneBookEdit_Click);
             // 
             // Admin
@@ -166,7 +157,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 420);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPhoneBookEdit);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -197,7 +187,6 @@
         private System.Windows.Forms.Label lblminimize;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPhoneBookEdit;
     }
 }
