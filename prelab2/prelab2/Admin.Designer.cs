@@ -39,6 +39,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPhoneBookEdit = new System.Windows.Forms.Button();
+            this.lblNotes = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,11 +162,22 @@
             this.btnPhoneBookEdit.UseVisualStyleBackColor = true;
             this.btnPhoneBookEdit.Click += new System.EventHandler(this.btnPhoneBookEdit_Click);
             // 
+            // lblNotes
+            // 
+            this.lblNotes.Location = new System.Drawing.Point(117, 290);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(75, 23);
+            this.lblNotes.TabIndex = 31;
+            this.lblNotes.Text = "Notes";
+            this.lblNotes.UseVisualStyleBackColor = true;
+            this.lblNotes.Click += new System.EventHandler(this.lblNotes_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 420);
+            this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPhoneBookEdit);
             this.Controls.Add(this.panel2);
@@ -199,5 +211,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPhoneBookEdit;
+        private System.Windows.Forms.Button lblNotes;
     }
 }
