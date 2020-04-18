@@ -17,13 +17,12 @@ namespace ooplab
         private string filenamenotes = @"Data\notes.csv";
         private string note;
         private static List<Notes> notes = new List<Notes>();
+        bool firstClick = true;
         public Notes()
         {
             InitializeComponent();
         }
-
         public static List<Notes> Note { get => notes; set => notes = value; }
-
         private void Notes_Load(object sender, EventArgs e)
         {
             if (!File.Exists(filenamenotes))
@@ -41,12 +40,11 @@ namespace ooplab
                     var line = reader.ReadLine();
                     var value = line.Split(':');
                     Notes temp = new Notes();
-                    temp.note = value[1];                    
+                    temp.note = value[1];
                     Notes.Note.Add(temp);
                 }
             }
         }
-
         private void BtnCreatNote_Click(object sender, EventArgs e)
         {
             if (txtNewNote.Text == "")
@@ -70,7 +68,7 @@ namespace ooplab
                     var line = reader.ReadLine();
                     var values = line.Split(':');
                     Notes temp = new Notes();
-                    temp.note = values[1];                    
+                    temp.note = values[1];
                     Notes.Note.Add(temp);
                 }
             }
@@ -94,12 +92,18 @@ namespace ooplab
                 }
             }
         }
-
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             // Delete the selected row
             int rowcount = -1;
-            rowcount = dgwNotes.CurrentRow.Index;
+            if (dgwNotes.CurrentRow != null)
+            {
+                rowcount = dgwNotes.CurrentRow.Index;
+            }
+            else
+            {
+                MessageBox.Show("You must choose a note!", "ERROR");
+            }
             for (int i = 0; i < Notes.Note.Count; i++)
             {
                 if (dgwNotes.Rows.Count != 0 && rowcount != -1)
@@ -116,14 +120,28 @@ namespace ooplab
                             File.AppendAllText(filenamenotes, csv.ToString());
                         }
                     }
-                   
                 }
                 else
                 {
                     MessageBox.Show("You must choose a note!", "ERROR");
                     break;
                 }
-               
+            }
+        }
+        private void lblclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void lblminimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+        private void txtNewNote_Click(object sender, EventArgs e)
+        {
+            if (firstClick)
+            {
+                txtNewNote.Text = string.Empty;
+                firstClick = false;
             }
         }
     }

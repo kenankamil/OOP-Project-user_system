@@ -19,14 +19,11 @@ namespace prelab2
     {
         User user = null;
         private static User loaduser = new User();
-
         public static User Loaduser { get => loaduser; set => loaduser = value; }
-
         public Form1()
         {
             InitializeComponent();
         }
-
         public void Form1_Load(object sender, EventArgs e)
         {
             string root = @"Data";
@@ -40,7 +37,6 @@ namespace prelab2
             {
                 File.Create(fileName).Close();
             }
-
             using (var reader = new StreamReader(@"Data\user.csv"))
             {
                 while (!reader.EndOfStream)
@@ -66,12 +62,6 @@ namespace prelab2
                 }
             }
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             /* timer1.Stop();
@@ -80,7 +70,6 @@ namespace prelab2
              this.Close();
              */
         }
-
         private void LOGİN_Click_1(object sender, EventArgs e)
         {
             string username = usernametxt.Text.ToString();
@@ -113,7 +102,6 @@ namespace prelab2
                     }
                 }
             }
-
             if (user == null)
             {
                 lblSonuc.Text = "Failure";
@@ -139,12 +127,10 @@ namespace prelab2
             Newaccount newaccount = new Newaccount();
             newaccount.ShowDialog();
         }
-
         private void lblminimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
             this.Close();

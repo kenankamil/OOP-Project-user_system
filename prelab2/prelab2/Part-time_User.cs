@@ -16,17 +16,17 @@ namespace ooplab
         {
             InitializeComponent();
         }
-
-        private void Part_time_User_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnPhonebook_Click(object sender, EventArgs e)
         {
             Phonebook phonebook = new Phonebook();
             this.Close();
             phonebook.Show();
+        }
+        private void BtnNotes_Click(object sender, EventArgs e)
+        {
+            Notes enternotes = new Notes();
+            this.Close();
+            enternotes.Show();
         }
     }
 }

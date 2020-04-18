@@ -142,17 +142,14 @@ namespace ooplab
                 }
             }
         }
-
         private void lblminimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
-
         private void lblClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnPreviosPage_Click(object sender, EventArgs e)
         {
             Admin goback = new Admin();

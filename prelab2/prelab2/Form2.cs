@@ -18,15 +18,9 @@ namespace prelab2
             this.user = user;
             InitializeComponent();
         }
-
         private void Form2_Load(object sender, EventArgs e)
         {
             lblUsername.Text = user.Username;
-        }
-
-        private void lblPassWord_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
