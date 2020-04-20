@@ -36,9 +36,9 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblminimize = new System.Windows.Forms.Label();
             this.lblClose = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnPreviosPage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwRecords)).BeginInit();
             this.panel1.SuspendLayout();
@@ -137,6 +137,17 @@
             this.panel1.Size = new System.Drawing.Size(617, 60);
             this.panel1.TabIndex = 28;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(242, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 21);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "PHONEBOOK";
+            // 
             // lblminimize
             // 
             this.lblminimize.AutoSize = true;
@@ -160,17 +171,6 @@
             this.lblClose.TabIndex = 2;
             this.lblClose.Text = "X";
             this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(242, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 21);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "PHONEBOOK";
             // 
             // btnPreviosPage
             // 

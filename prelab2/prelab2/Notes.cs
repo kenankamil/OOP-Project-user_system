@@ -17,6 +17,8 @@ namespace ooplab
         private string filenamenotes = @"Data\notes.csv";
         private string note;
         private static List<Notes> notes = new List<Notes>();
+        private static List<string> notesLoadUser = new List<string>();
+        private static List<string> notesUpdate = new List<string>();
         bool firstClick = true;
         public Notes()
         {
@@ -42,8 +44,11 @@ namespace ooplab
                     Notes temp = new Notes();
                     temp.note = value[1];
                     Notes.Note.Add(temp);
+                    notesUpdate.Add(value[1]);
+                    notesLoadUser.Add(value[0]);
                 }
             }
+            
         }
         private void BtnCreatNote_Click(object sender, EventArgs e)
         {
@@ -63,6 +68,8 @@ namespace ooplab
             using (var reader = new StreamReader(filenamenotes))
             {
                 Note.Clear();
+                notesLoadUser.Clear();
+                notesUpdate.Clear();
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
@@ -70,6 +77,8 @@ namespace ooplab
                     Notes temp = new Notes();
                     temp.note = values[1];
                     Notes.Note.Add(temp);
+                    notesLoadUser.Add(values[0]);
+                    notesUpdate.Add(values[1]);
                 }
             }
         }
@@ -83,11 +92,11 @@ namespace ooplab
                 {
                     string[] temp = { };
                     var line = reader.ReadLine();
-                    var values = line.Split(':');
+                    var values = line.Split(':');                    
                     if (values[0] == Form1.Loaduser.Username)
                     {
                         temp = new string[] { values[1] };
-                        dgwNotes.Rows.Add(temp);
+                        dgwNotes.Rows.Add(temp);                      
                     }
                 }
             }
@@ -111,6 +120,8 @@ namespace ooplab
                     if (Note[i].note == dgwNotes.Rows[rowcount].Cells[0].Value.ToString())
                     {
                         Note.RemoveAt(i);
+                        notesLoadUser.RemoveAt(i);
+                        notesUpdate.RemoveAt(i);
                         File.WriteAllText(filenamenotes, "");
                         for (int j = 0; j < Note.Count; j++)
                         {
@@ -142,6 +153,31 @@ namespace ooplab
             {
                 txtNewNote.Text = string.Empty;
                 firstClick = false;
+            }
+        }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            int j = 0;
+            for (int k = 0; k < notesUpdate.Count; k++) //Update notesUptade list from dgwNotes
+            {               
+                if (Form1.Loaduser.Username == notesLoadUser[k]) 
+                {
+                    notesUpdate[k] = dgwNotes.Rows[j].Cells[0].Value.ToString();
+                    j++;
+                }
+            }
+            //Rewrite to notes.csv
+            var notesCsv = new StringBuilder();
+            File.Delete(filenamenotes);
+            File.Create(filenamenotes).Close();
+            var newLine_ = "";
+            for (int k = 0; k <notesUpdate.Count; k++)
+            {
+                newLine_ = "";
+                newLine_ =string.Format(notesLoadUser[k]+":"+ notesUpdate[k]) ;
+                notesCsv.AppendLine(newLine_);
+                File.AppendAllText(@"Data\notes.csv", notesCsv.ToString());
+                notesCsv.Clear();
             }
         }
     }

@@ -135,5 +135,10 @@ namespace prelab2
         {
             this.Close();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

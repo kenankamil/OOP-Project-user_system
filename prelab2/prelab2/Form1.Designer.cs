@@ -40,10 +40,10 @@
             this.passwordtxt = new System.Windows.Forms.TextBox();
             this.usernametxt = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblminimize = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,9 +59,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // save
-            // 
             // 
             // checkremember
             // 
@@ -151,6 +148,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(397, 60);
             this.panel1.TabIndex = 24;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(161, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 21);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "LOGIN";
             // 
             // lblminimize
             // 
@@ -184,17 +193,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(397, 60);
             this.panel2.TabIndex = 25;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(161, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 21);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "LOGIN";
             // 
             // Form1
             // 
