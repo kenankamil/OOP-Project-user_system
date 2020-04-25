@@ -81,12 +81,7 @@ namespace prelab2
             else
                 lbmassage.Text = "Not Confirm!!";
         }
-
-        private void Newaccount_Load(object sender, EventArgs e)
-        {
-            Form1.ActiveForm.Hide();
-
-        }
+        private void Newaccount_Load(object sender, EventArgs e) => Form1.ActiveForm.Hide();
         private void lblminimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
