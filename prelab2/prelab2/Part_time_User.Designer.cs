@@ -154,6 +154,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Part_time_User";
             this.Text = "Part_time_User";
+            this.Load += new System.EventHandler(this.Part_time_User_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

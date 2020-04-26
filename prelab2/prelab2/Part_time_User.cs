@@ -28,5 +28,10 @@ namespace ooplab
             this.Close();
             enternotes.Show();
         }
+
+        private void Part_time_User_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

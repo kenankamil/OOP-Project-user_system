@@ -48,6 +48,11 @@ namespace prelab2
                     temp.Username = values[0];
                     temp.Password = values[1];
                     temp.Type = values[2];
+                    temp.Name = values[3];
+                    temp.Surname = values[4];
+                    temp.Phone_number = values[5];
+                    temp.Address = values[6];
+                    temp.E_mail = values[7];
                     users.Userlist.Add(temp);
                     //  Console.WriteLine(temp.Username + " " + temp.Password);
                 }
