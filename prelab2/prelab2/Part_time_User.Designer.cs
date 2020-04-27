@@ -46,9 +46,9 @@
             this.btnPhonebook.BackColor = System.Drawing.SystemColors.WindowText;
             this.btnPhonebook.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPhonebook.ForeColor = System.Drawing.Color.White;
-            this.btnPhonebook.Location = new System.Drawing.Point(133, 244);
+            this.btnPhonebook.Location = new System.Drawing.Point(99, 244);
             this.btnPhonebook.Name = "btnPhonebook";
-            this.btnPhonebook.Size = new System.Drawing.Size(103, 37);
+            this.btnPhonebook.Size = new System.Drawing.Size(171, 46);
             this.btnPhonebook.TabIndex = 0;
             this.btnPhonebook.Text = "Phonebook";
             this.btnPhonebook.UseVisualStyleBackColor = false;
@@ -59,11 +59,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(146, 23);
+            this.label4.Location = new System.Drawing.Point(113, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 21);
+            this.label4.Size = new System.Drawing.Size(144, 21);
             this.label4.TabIndex = 2;
-            this.label4.Text = "NOTES";
+            this.label4.Text = "Part-Time USER";
             // 
             // lblminimize
             // 
@@ -75,6 +75,7 @@
             this.lblminimize.Size = new System.Drawing.Size(21, 21);
             this.lblminimize.TabIndex = 1;
             this.lblminimize.Text = "_";
+            this.lblminimize.Click += new System.EventHandler(this.lblminimize_Click);
             // 
             // lblclose
             // 
@@ -86,6 +87,7 @@
             this.lblclose.Size = new System.Drawing.Size(22, 21);
             this.lblclose.TabIndex = 0;
             this.lblclose.Text = "X";
+            this.lblclose.Click += new System.EventHandler(this.lblclose_Click);
             // 
             // panel1
             // 
@@ -113,9 +115,9 @@
             this.BtnNotes.BackColor = System.Drawing.SystemColors.WindowText;
             this.BtnNotes.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnNotes.ForeColor = System.Drawing.Color.White;
-            this.BtnNotes.Location = new System.Drawing.Point(133, 287);
+            this.BtnNotes.Location = new System.Drawing.Point(99, 296);
             this.BtnNotes.Name = "BtnNotes";
-            this.BtnNotes.Size = new System.Drawing.Size(103, 38);
+            this.BtnNotes.Size = new System.Drawing.Size(171, 41);
             this.BtnNotes.TabIndex = 33;
             this.BtnNotes.Text = "Notes";
             this.BtnNotes.UseVisualStyleBackColor = false;
@@ -168,8 +170,8 @@
             this.Controls.Add(this.btnPhonebook);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Part_time_User";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Part_time_User";
-            this.Load += new System.EventHandler(this.Part_time_User_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

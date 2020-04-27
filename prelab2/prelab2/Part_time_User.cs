@@ -28,17 +28,19 @@ namespace ooplab
             this.Close();
             enternotes.Show();
         }
-
-        private void Part_time_User_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnPartProfile_Click(object sender, EventArgs e)
         {
             Profile profile = new Profile();
             this.Close();
             profile.Show();
+        }
+        private void lblclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void lblminimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

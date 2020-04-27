@@ -44,17 +44,11 @@ namespace ooplab
             this.Close();
             enternotes.Show();
         }
-
         private void btnAdminProfile_Click(object sender, EventArgs e)
         {
             Profile profile = new Profile();
             this.Close();
             profile.Show();
-        }
-
-        private void Admin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

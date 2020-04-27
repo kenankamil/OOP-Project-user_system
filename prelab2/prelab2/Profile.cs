@@ -15,16 +15,14 @@ namespace ooplab
 {
     public partial class Profile : Form
     {
-
+        Stack<Func<object>> undoStack = new Stack<Func<object>>();
+        Stack<Func<object>> redoStack = new Stack<Func<object>>();
         string file = @"Data\user.csv";
-        //string base64photo;
-
         public Profile()
         {
             InitializeComponent();
+            textBox1.KeyDown += textBox1_KeyDown;
         }
-
-        //string base64photo;
         private void Profile_Load(object sender, EventArgs e)
         {
             dgwProfile.ColumnCount = 6;
@@ -38,29 +36,6 @@ namespace ooplab
             dgwProfile.AllowUserToAddRows = false;
             dgwProfile.Rows.Clear();
 
-            //Save to List Userlist from user.csv
-            //using (var reader = new StreamReader(file))
-            //{
-            //    while (!reader.EndOfStream)
-            //    {
-            //        var line = reader.ReadLine();
-            //        var values = line.Split(';');
-
-            //        User temp = new User();
-            //        temp.Username = values[0];
-            //        temp.Password = values[1];
-            //        temp.Type = values[2];
-            //        temp.Name = values[3];
-            //        temp.Surname = values[4];
-            //        temp.Phone_number = values[5];
-            //        temp.Address = values[6];
-            //        temp.E_mail = values[7];
-            //        temp.Photo = values[8];
-            //        users.Userlist.Add(temp);
-            //    }
-            //}
-
-            //List from Profile List to dgwProfile
             using (var reader = new StreamReader(file))
             {
                 while (!reader.EndOfStream)
@@ -73,12 +48,9 @@ namespace ooplab
                     {
                         temp = new string[] { values[3], values[4], values[5], values[6], values[7], values[1] };
                         dgwProfile.Rows.Add(temp);
+                        textBox1.Text = values[3];
                         //display photo dgw
                         string base64String = values[8];
-
-                        //users.Userlist[p].Photo = values[8];
-
-
                         byte[] imageBytes = Convert.FromBase64String(base64String);
                         // Convert byte[] to Image
 
@@ -94,7 +66,6 @@ namespace ooplab
                 }
             }
         }
-
         private void btnEditProfile_Click(object sender, EventArgs e)
         {
             int flag = 1;
@@ -130,12 +101,17 @@ namespace ooplab
                 {
                     if (Form1.Loaduser.Username == users.Userlist[k].Username)
                     {
-
-                        //base64photo = users.Userlist[k_user].Photo;
                         //Save to Profile List from data grid view for update items
                         users.Userlist[k].Name = dgwProfile.Rows[j].Cells[0].Value.ToString(); //name
                         users.Userlist[k].Surname = dgwProfile.Rows[j].Cells[1].Value.ToString(); //surname
-                        users.Userlist[k].Phone_number = dgwProfile.Rows[j].Cells[2].Value.ToString(); //phonenumber
+                        if (users.Userlist[k].Phone_number != dgwProfile.Rows[j].Cells[2].Value.ToString())
+                        {
+                            users.Userlist[k].Phone_number = String.Format("{0:(###) ### ## ##}", Convert.ToInt64(dgwProfile.Rows[j].Cells[2].Value.ToString()));
+                        }
+                        else
+                        {
+                            users.Userlist[k].Phone_number = dgwProfile.Rows[j].Cells[2].Value.ToString(); //phonenumber
+                        }
                         users.Userlist[k].Address = dgwProfile.Rows[j].Cells[3].Value.ToString(); //address
                         users.Userlist[k].E_mail = dgwProfile.Rows[j].Cells[4].Value.ToString(); //email
 
@@ -143,20 +119,6 @@ namespace ooplab
                         {
                             users.Userlist[k].Password = Hash256.ComputeSha256Hash(dgwProfile.Rows[j].Cells[5].Value.ToString()); //password
                         }
-                        //using (var reader = new StreamReader(file))
-                        //{
-                        //    while (!reader.EndOfStream)
-                        //    {
-                        //        var line = reader.ReadLine();
-                        //        var values = line.Split(';');
-                        //        if (Form1.Loaduser.Username == values[0] && users.Userlist[k].Photo == values[8])
-                        //        {
-                        //            users.Userlist[k].Photo = values[8];
-                        //        }
-                        //    }
-                        //}
-
-                        //users.Userlist[k].Photo = base64photo; //photo
                         j++;
                     }
                 }
@@ -165,23 +127,22 @@ namespace ooplab
             var userCSV = new StringBuilder();
             File.Delete(file);
             File.Create(file).Close();
-            var newLine_ = "";
+            var newLine = "";
             for (int a = 0; a < users.Userlist.Count(); a++)
             {
-                newLine_ = "";
-                newLine_ = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8}",
-                users.Userlist[a].Username, users.Userlist[a].Password,
-                users.Userlist[a].Type, users.Userlist[a].Name,
-                users.Userlist[a].Surname, 
-                String.Format("{0:(###) ### ## ##}", Convert.ToInt64(users.Userlist[a].Phone_number)),
-                users.Userlist[a].Address, users.Userlist[a].E_mail,
-                users.Userlist[a].Photo);
-                userCSV.AppendLine(newLine_);
-                File.AppendAllText(file, userCSV.ToString());
-                userCSV.Clear();
+                    newLine = "";
+                    newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8}",
+                    users.Userlist[a].Username, users.Userlist[a].Password,
+                    users.Userlist[a].Type, users.Userlist[a].Name,
+                    users.Userlist[a].Surname,
+                    users.Userlist[a].Phone_number,
+                    users.Userlist[a].Address, users.Userlist[a].E_mail,
+                    users.Userlist[a].Photo);
+                    userCSV.AppendLine(newLine);
+                    File.AppendAllText(file, userCSV.ToString());
+                    userCSV.Clear();
             }
         }
-
         private void btnAddPhoto_Click(object sender, EventArgs e)
         {
             // open file dialog   
@@ -210,5 +171,88 @@ namespace ooplab
                 }
             }
         }
+        private void btnPreviosPage_Click(object sender, EventArgs e)
+        {
+            if (Form1.Loaduser.Type == "Admin")
+            {
+                Admin goback = new Admin();
+                this.Close();
+                goback.Show();
+            }
+            else if (Form1.Loaduser.Type == "User")
+            {
+                UserForm goback = new UserForm();
+                this.Close();
+                goback.Show();
+            }
+            else
+            {
+                Part_time_User goback = new Part_time_User();
+                this.Close();
+                goback.Show();
+            }
+        }
+        //protected override void OnKeyUp(KeyEventArgs e)
+        //{
+        //    //if (e.KeyCode == Keys.ControlKey && ModifierKeys == Keys.Control) { }
+        //    if (e.KeyCode == Keys.Enter)
+        //    {
+        //        int currentRow = dgwProfile.CurrentRow.Index;
+        //        if (currentRow >= 0)
+        //            dgwProfile.CurrentCell = dgwProfile.Rows[currentRow].Cells[0];
+        //    }
+        //    base.OnKeyUp(e);
+        //}
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.ControlKey && ModifierKeys == Keys.Control) { }
+            else if (e.KeyCode == Keys.Z && ModifierKeys == Keys.Control)
+            {
+                if (undoStack.Count > 0)
+                {
+                    StackPush(sender, redoStack);
+                    undoStack.Pop()();
+                }
+            }
+            else if (e.KeyCode == Keys.Y && ModifierKeys == Keys.Control)
+            {
+                if (redoStack.Count > 0)
+                {
+                    StackPush(sender, undoStack);
+                    redoStack.Pop()();
+                }
+            }
+            else
+            {
+                redoStack.Clear();
+                StackPush(sender, undoStack);
+            }
+        }
+        private void StackPush(object sender, Stack<Func<object>> stack)
+        {
+            TextBox textBox = (TextBox)sender;
+            var tBT = textBox.Text(textBox.Text, textBox.SelectionStart);
+            stack.Push(tBT);
+        }
+        private void lblminimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
+public static class Extensions
+{
+    public static Func<TextBox> Text(this TextBox textBox, string text, int sel)
+    {
+        return () =>
+        {
+            textBox.Text = text;
+            textBox.SelectionStart = sel;
+            return textBox;
+        };
     }
 }

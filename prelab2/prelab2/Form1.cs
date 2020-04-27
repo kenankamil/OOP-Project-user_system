@@ -43,7 +43,6 @@ namespace prelab2
                 {
                     var line = reader.ReadLine();
                     var values = line.Split(';');
-                    // int size = users.Count();
                     User temp = new User();
                     temp.Username = values[0];
                     temp.Password = values[1];
@@ -55,7 +54,6 @@ namespace prelab2
                     temp.E_mail = values[7];
                     temp.Photo = values[8];
                     users.Userlist.Add(temp);
-                    //  Console.WriteLine(temp.Username + " " + temp.Password);
                 }
             }
             if (ooplab.Properties.Settings.Default.Username != string.Empty)
@@ -106,6 +104,12 @@ namespace prelab2
                         this.Hide();
                         userform.Show();
                     }
+                    if (item.Type == "Part-time User")
+                    {
+                        Part_time_User parttimeuserform = new Part_time_User();
+                        this.Hide();
+                        parttimeuserform.Show();
+                    }
                 }
             }
             if (user == null)
@@ -140,16 +144,6 @@ namespace prelab2
         private void label1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void usernametxt_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
