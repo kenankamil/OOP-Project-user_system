@@ -33,5 +33,12 @@ namespace ooplab
         {
 
         }
+
+        private void btnPartProfile_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile();
+            this.Close();
+            profile.Show();
+        }
     }
 }

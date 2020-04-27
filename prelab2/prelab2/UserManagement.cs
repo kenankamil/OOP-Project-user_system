@@ -67,8 +67,12 @@ namespace ooplab
                     for (int j = 0; j < users.Userlist.Count; j++)
                     {
                         {
-                            var newLine = string.Format("{0};{1};{2}", users.Userlist[j].Username, users.Userlist[j].Password,
-                                users.Userlist[j].Type);
+
+                            var newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8}",
+                            users.Userlist[j].Username, users.Userlist[j].Password,
+                            users.Userlist[j].Type, users.Userlist[j].Name, users.Userlist[j].Surname,
+                            users.Userlist[j].Phone_number,
+                            users.Userlist[j].Address, users.Userlist[j].E_mail, users.Userlist[j].Photo);              
                             csv.AppendLine(newLine);
                             lblmassage.Text = "Success";
                             txtList.Text = "Username: " + users.Userlist[i].Username + Environment.NewLine + "Password: " +
@@ -96,8 +100,11 @@ namespace ooplab
                 for (int j = 0; j < users.Userlist.Count; j++)
                 {
                     {
-                        var newLine = string.Format("{0};{1};{2}", users.Userlist[j].Username, users.Userlist[j].Password,
-                            users.Userlist[j].Type);
+                        var newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8}",
+                        users.Userlist[j].Username, users.Userlist[j].Password,
+                        users.Userlist[j].Type, users.Userlist[j].Name, users.Userlist[j].Surname,
+                        users.Userlist[j].Phone_number,
+                        users.Userlist[j].Address, users.Userlist[j].E_mail, users.Userlist[j].Photo);
                         csv.AppendLine(newLine);
                         lblmassage.Text = "Success";
                         txtList.Text = "Username: " + users.Userlist[i].Username + Environment.NewLine + "Password: " +

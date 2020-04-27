@@ -16,6 +16,7 @@ namespace prelab2
         private string phone_number;
         private string address;
         private string e_mail;
+        private string photo;
         public User(string username, string password, string type)
         {
             this.username = username;
@@ -31,5 +32,6 @@ namespace prelab2
         public string Phone_number { get => phone_number; set => phone_number = value; }
         public string Address { get => address; set => address = value; }
         public string E_mail { get => e_mail; set => e_mail = value; }
+        public string Photo { get => photo; set => photo = value; }
     }
 }

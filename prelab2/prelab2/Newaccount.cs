@@ -22,6 +22,7 @@ namespace prelab2
             InitializeComponent();
         }
         string base64photo;
+        
         private void btnnewaccount_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
@@ -68,8 +69,8 @@ namespace prelab2
                 if (flag == 99)
                 {
                     var newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8}", username, password, type, txtname.Text, txtsurname.Text,
-                        String.Format("{0:(###) ### ## ##}", Convert.ToInt64(txtphonenumber.Text)),
-                        txtaddress.Text, txte_mail.Text,base64photo, Environment.NewLine);
+                    String.Format("{0:(###) ### ## ##}", Convert.ToInt64(txtphonenumber.Text)),
+                    txtaddress.Text, txte_mail.Text,base64photo);                  
                     csv.AppendLine(newLine);
                     File.AppendAllText(@"Data\user.csv", csv.ToString());
                     lblhata.Text = "Success";
@@ -118,13 +119,20 @@ namespace prelab2
             }
             // image file path    
             string path = open.FileName;
-            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(path);
-            string base64 = System.Convert.ToBase64String(plainTextBytes);          
+
+            //var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(path);
+            //string base64 = System.Convert.ToBase64String(plainTextBytes);          
             //base64photo = base64;
             //I did not decide corrrect one or one of them is correct
-            byte[] imageArray = System.IO.File.ReadAllBytes(path);
-            string base64ImageRepresentation = Convert.ToBase64String(imageArray);
-            base64photo = base64ImageRepresentation;
+            if (path != "")
+            {
+                
+                byte[] imageArray = System.IO.File.ReadAllBytes(path);
+                string base64ImageRepresentation = Convert.ToBase64String(imageArray);
+                base64photo = base64ImageRepresentation;
+               
+                
+            }
         }
     }
 }

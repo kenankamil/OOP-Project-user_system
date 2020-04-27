@@ -39,6 +39,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPhoneBookEdit = new System.Windows.Forms.Button();
             this.BtnNotes = new System.Windows.Forms.Button();
+            this.btnAdminProfile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.btnUserManagement.BackColor = System.Drawing.Color.Black;
             this.btnUserManagement.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserManagement.ForeColor = System.Drawing.Color.White;
-            this.btnUserManagement.Location = new System.Drawing.Point(107, 162);
+            this.btnUserManagement.Location = new System.Drawing.Point(107, 196);
             this.btnUserManagement.Name = "btnUserManagement";
             this.btnUserManagement.Size = new System.Drawing.Size(171, 45);
             this.btnUserManagement.TabIndex = 0;
@@ -145,7 +146,7 @@
             this.btnPhoneBookEdit.BackColor = System.Drawing.SystemColors.WindowText;
             this.btnPhoneBookEdit.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPhoneBookEdit.ForeColor = System.Drawing.Color.White;
-            this.btnPhoneBookEdit.Location = new System.Drawing.Point(107, 230);
+            this.btnPhoneBookEdit.Location = new System.Drawing.Point(107, 247);
             this.btnPhoneBookEdit.Name = "btnPhoneBookEdit";
             this.btnPhoneBookEdit.Size = new System.Drawing.Size(171, 40);
             this.btnPhoneBookEdit.TabIndex = 29;
@@ -166,11 +167,25 @@
             this.BtnNotes.UseVisualStyleBackColor = false;
             this.BtnNotes.Click += new System.EventHandler(this.BtnNotes_Click);
             // 
+            // btnAdminProfile
+            // 
+            this.btnAdminProfile.BackColor = System.Drawing.Color.Black;
+            this.btnAdminProfile.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAdminProfile.ForeColor = System.Drawing.Color.White;
+            this.btnAdminProfile.Location = new System.Drawing.Point(107, 145);
+            this.btnAdminProfile.Name = "btnAdminProfile";
+            this.btnAdminProfile.Size = new System.Drawing.Size(171, 45);
+            this.btnAdminProfile.TabIndex = 31;
+            this.btnAdminProfile.Text = "Profile";
+            this.btnAdminProfile.UseVisualStyleBackColor = false;
+            this.btnAdminProfile.Click += new System.EventHandler(this.btnAdminProfile_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 420);
+            this.Controls.Add(this.btnAdminProfile);
             this.Controls.Add(this.BtnNotes);
             this.Controls.Add(this.btnPhoneBookEdit);
             this.Controls.Add(this.panel2);
@@ -183,6 +198,7 @@
             this.Name = "Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.Admin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -203,5 +219,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnPhoneBookEdit;
         private System.Windows.Forms.Button BtnNotes;
+        private System.Windows.Forms.Button btnAdminProfile;
     }
 }
