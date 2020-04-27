@@ -40,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnPreviosPage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwNotes)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -184,12 +185,26 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnPreviosPage
+            // 
+            this.btnPreviosPage.BackColor = System.Drawing.SystemColors.WindowText;
+            this.btnPreviosPage.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnPreviosPage.ForeColor = System.Drawing.Color.White;
+            this.btnPreviosPage.Location = new System.Drawing.Point(12, 337);
+            this.btnPreviosPage.Name = "btnPreviosPage";
+            this.btnPreviosPage.Size = new System.Drawing.Size(75, 34);
+            this.btnPreviosPage.TabIndex = 33;
+            this.btnPreviosPage.Text = "<--";
+            this.btnPreviosPage.UseVisualStyleBackColor = false;
+            this.btnPreviosPage.Click += new System.EventHandler(this.btnPreviosPage_Click);
+            // 
             // Notes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(614, 459);
+            this.Controls.Add(this.btnPreviosPage);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -226,5 +241,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnPreviosPage;
     }
 }

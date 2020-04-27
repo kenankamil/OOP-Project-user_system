@@ -22,7 +22,6 @@ namespace prelab2
             InitializeComponent();
         }
         string base64photo;
-        
         private void btnnewaccount_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
@@ -97,7 +96,6 @@ namespace prelab2
             this.Close();
             goback.Show();
         }
-
         private void btnAddFromFile_Click(object sender, EventArgs e)
         {
             // open file dialog   
@@ -119,19 +117,15 @@ namespace prelab2
             }
             // image file path    
             string path = open.FileName;
-
             //var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(path);
             //string base64 = System.Convert.ToBase64String(plainTextBytes);          
             //base64photo = base64;
             //I did not decide corrrect one or one of them is correct
             if (path != "")
-            {
-                
+            {  
                 byte[] imageArray = System.IO.File.ReadAllBytes(path);
                 string base64ImageRepresentation = Convert.ToBase64String(imageArray);
                 base64photo = base64ImageRepresentation;
-               
-                
             }
         }
     }

@@ -81,7 +81,6 @@
             this.dgwRecords.RowTemplate.Height = 24;
             this.dgwRecords.Size = new System.Drawing.Size(490, 210);
             this.dgwRecords.TabIndex = 4;
-            this.dgwRecords.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwRecords_CellContentClick);
             // 
             // lblInfo
             // 

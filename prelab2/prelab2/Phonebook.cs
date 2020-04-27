@@ -71,10 +71,6 @@ namespace ooplab
             {
                 if (Form1.Loaduser.Username == PhonebookRecords.PhoneBook[k].LoadUser1)
                 {
-                    //if (dgwRecords.Rows[k].Cells[j].Value == null || dgwRecords.Rows[k].Cells[j].Value == DBNull.Value || String.IsNullOrWhiteSpace(dgwRecords.Rows[k].Cells[j].Value.ToString()))
-                    //{
-                    //    Console.WriteLine("Fail");
-                    //}
                     PhonebookRecords.PhoneBook[k].Name1 = dgwRecords.Rows[j].Cells[0].Value.ToString();
                     PhonebookRecords.PhoneBook[k].Surname1 = dgwRecords.Rows[j].Cells[1].Value.ToString();
                     PhonebookRecords.PhoneBook[k].Phone_number1 = dgwRecords.Rows[j].Cells[2].Value.ToString();
@@ -152,14 +148,24 @@ namespace ooplab
         }
         private void btnPreviosPage_Click(object sender, EventArgs e)
         {
-            Admin goback = new Admin();
-            this.Close();
-            goback.Show();
-        }
-
-        private void dgwRecords_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            if (Form1.Loaduser.Type == "Admin")
+            {
+                Admin goback = new Admin();
+                this.Close();
+                goback.Show();
+            }
+            else if (Form1.Loaduser.Type == "User")
+            {
+                UserForm goback = new UserForm();
+                this.Close();
+                goback.Show();
+            }
+            else
+            {
+                Part_time_User goback = new Part_time_User();
+                this.Close();
+                goback.Show();
+            }
         }
     }
 }

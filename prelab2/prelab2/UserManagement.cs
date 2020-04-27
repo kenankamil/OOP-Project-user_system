@@ -67,7 +67,6 @@ namespace ooplab
                     for (int j = 0; j < users.Userlist.Count; j++)
                     {
                         {
-
                             var newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8}",
                             users.Userlist[j].Username, users.Userlist[j].Password,
                             users.Userlist[j].Type, users.Userlist[j].Name, users.Userlist[j].Surname,
@@ -125,9 +124,24 @@ namespace ooplab
         }
         private void btnPreviosPage_Click(object sender, EventArgs e)
         {
-            Admin admin = new Admin();
-            this.Close();
-            admin.Show();
+            if (Form1.Loaduser.Type == "Admin")
+            {
+                Admin goback = new Admin();
+                this.Close();
+                goback.Show();
+            }
+            else if (Form1.Loaduser.Type == "User")
+            {
+                UserForm goback = new UserForm();
+                this.Close();
+                goback.Show();
+            }
+            else
+            {
+                Part_time_User goback = new Part_time_User();
+                this.Close();
+                goback.Show();
+            }
         }
     }
 }

@@ -48,7 +48,6 @@ namespace ooplab
                     notesLoadUser.Add(value[0]);
                 }
             }
-            
         }
         private void BtnCreatNote_Click(object sender, EventArgs e)
         {
@@ -178,6 +177,27 @@ namespace ooplab
                 notesCsv.AppendLine(newLine_);
                 File.AppendAllText(@"Data\notes.csv", notesCsv.ToString());
                 notesCsv.Clear();
+            }
+        }
+        private void btnPreviosPage_Click(object sender, EventArgs e)
+        {
+            if (Form1.Loaduser.Type == "Admin")
+            {
+                Admin goback = new Admin();
+                this.Close();
+                goback.Show();
+            }
+            else if (Form1.Loaduser.Type == "User")
+            {
+                UserForm goback = new UserForm();
+                this.Close();
+                goback.Show();
+            }
+            else
+            {
+                Part_time_User goback = new Part_time_User();
+                this.Close();
+                goback.Show();
             }
         }
     }

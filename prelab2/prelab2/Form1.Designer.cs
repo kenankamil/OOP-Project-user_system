@@ -67,7 +67,7 @@
             this.checkremember.Location = new System.Drawing.Point(84, 215);
             this.checkremember.Name = "checkremember";
             this.checkremember.Size = new System.Drawing.Size(127, 22);
-            this.checkremember.TabIndex = 23;
+            this.checkremember.TabIndex = 2;
             this.checkremember.Text = "Remember Me";
             this.checkremember.UseVisualStyleBackColor = true;
             // 
@@ -79,7 +79,7 @@
             this.btnnewaccount.Location = new System.Drawing.Point(192, 243);
             this.btnnewaccount.Name = "btnnewaccount";
             this.btnnewaccount.Size = new System.Drawing.Size(128, 34);
-            this.btnnewaccount.TabIndex = 22;
+            this.btnnewaccount.TabIndex = 4;
             this.btnnewaccount.Text = "Sign Up";
             this.btnnewaccount.UseVisualStyleBackColor = false;
             this.btnnewaccount.Click += new System.EventHandler(this.btnnewaccount_Click);
@@ -112,7 +112,7 @@
             this.LOGİN.Location = new System.Drawing.Point(58, 243);
             this.LOGİN.Name = "LOGİN";
             this.LOGİN.Size = new System.Drawing.Size(128, 34);
-            this.LOGİN.TabIndex = 19;
+            this.LOGİN.TabIndex = 3;
             this.LOGİN.Text = "Login";
             this.LOGİN.UseVisualStyleBackColor = false;
             this.LOGİN.Click += new System.EventHandler(this.LOGİN_Click_1);
@@ -124,7 +124,7 @@
             this.passwordtxt.Name = "passwordtxt";
             this.passwordtxt.PasswordChar = '*';
             this.passwordtxt.Size = new System.Drawing.Size(216, 28);
-            this.passwordtxt.TabIndex = 18;
+            this.passwordtxt.TabIndex = 1;
             this.passwordtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // usernametxt
@@ -134,9 +134,8 @@
             this.usernametxt.Location = new System.Drawing.Point(84, 111);
             this.usernametxt.Name = "usernametxt";
             this.usernametxt.Size = new System.Drawing.Size(216, 28);
-            this.usernametxt.TabIndex = 17;
+            this.usernametxt.TabIndex = 0;
             this.usernametxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.usernametxt.TextChanged += new System.EventHandler(this.usernametxt_TextChanged);
             // 
             // panel1
             // 
@@ -149,7 +148,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(397, 60);
             this.panel1.TabIndex = 24;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label4
             // 
