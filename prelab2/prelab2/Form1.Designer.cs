@@ -136,6 +136,7 @@
             this.usernametxt.Size = new System.Drawing.Size(216, 28);
             this.usernametxt.TabIndex = 17;
             this.usernametxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.usernametxt.TextChanged += new System.EventHandler(this.usernametxt_TextChanged);
             // 
             // panel1
             // 

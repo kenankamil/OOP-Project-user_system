@@ -156,6 +156,11 @@ namespace ooplab
             this.Close();
             goback.Show();
         }
+
+        private void dgwRecords_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 

@@ -53,6 +53,7 @@ namespace prelab2
                     temp.Phone_number = values[5];
                     temp.Address = values[6];
                     temp.E_mail = values[7];
+                    temp.Photo = values[8];
                     users.Userlist.Add(temp);
                     //  Console.WriteLine(temp.Username + " " + temp.Password);
                 }
@@ -142,6 +143,11 @@ namespace prelab2
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void usernametxt_TextChanged(object sender, EventArgs e)
         {
 
         }

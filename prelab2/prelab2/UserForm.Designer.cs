@@ -37,6 +37,7 @@
             this.BtnNotes = new System.Windows.Forms.Button();
             this.lblType1 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
+            this.btnUserProfile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             this.btnPhoneBook.BackColor = System.Drawing.SystemColors.WindowText;
             this.btnPhoneBook.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPhoneBook.ForeColor = System.Drawing.Color.White;
-            this.btnPhoneBook.Location = new System.Drawing.Point(139, 196);
+            this.btnPhoneBook.Location = new System.Drawing.Point(139, 219);
             this.btnPhoneBook.Name = "btnPhoneBook";
             this.btnPhoneBook.Size = new System.Drawing.Size(115, 41);
             this.btnPhoneBook.TabIndex = 1;
@@ -142,11 +143,25 @@
             this.lblId.TabIndex = 36;
             this.lblId.Text = "Type:";
             // 
+            // btnUserProfile
+            // 
+            this.btnUserProfile.BackColor = System.Drawing.Color.Black;
+            this.btnUserProfile.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserProfile.ForeColor = System.Drawing.Color.White;
+            this.btnUserProfile.Location = new System.Drawing.Point(118, 168);
+            this.btnUserProfile.Name = "btnUserProfile";
+            this.btnUserProfile.Size = new System.Drawing.Size(171, 45);
+            this.btnUserProfile.TabIndex = 38;
+            this.btnUserProfile.Text = "Profile";
+            this.btnUserProfile.UseVisualStyleBackColor = false;
+            this.btnUserProfile.Click += new System.EventHandler(this.btnUserProfile_Click);
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 450);
+            this.Controls.Add(this.btnUserProfile);
             this.Controls.Add(this.lblType1);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.BtnNotes);
@@ -174,5 +189,6 @@
         private System.Windows.Forms.Button BtnNotes;
         private System.Windows.Forms.Label lblType1;
         private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Button btnUserProfile;
     }
 }
