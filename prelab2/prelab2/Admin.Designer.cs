@@ -40,6 +40,7 @@
             this.btnPhoneBookEdit = new System.Windows.Forms.Button();
             this.BtnNotes = new System.Windows.Forms.Button();
             this.btnAdminProfile = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,11 +181,22 @@
             this.btnAdminProfile.UseVisualStyleBackColor = false;
             this.btnAdminProfile.Click += new System.EventHandler(this.btnAdminProfile_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 156);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 420);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAdminProfile);
             this.Controls.Add(this.BtnNotes);
             this.Controls.Add(this.btnPhoneBookEdit);
@@ -219,5 +231,6 @@
         private System.Windows.Forms.Button btnPhoneBookEdit;
         private System.Windows.Forms.Button BtnNotes;
         private System.Windows.Forms.Button btnAdminProfile;
+        private System.Windows.Forms.Button button1;
     }
 }

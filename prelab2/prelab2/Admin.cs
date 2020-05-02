@@ -50,5 +50,12 @@ namespace ooplab
             this.Close();
             profile.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SalaryCalculator salaryCalculator = new SalaryCalculator();
+            this.Hide();
+            salaryCalculator.Show();
+        }
     }
 }
