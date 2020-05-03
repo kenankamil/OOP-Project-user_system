@@ -63,8 +63,8 @@ namespace ooplab
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            int i;
-            for (i=0; i < users.Userlist.Count; i++)
+            int i = 0;
+            for (;i < users.Userlist.Count; i++)
             {
                 if (users.SelectedUser.Username == users.Userlist[i].Username)
                 {

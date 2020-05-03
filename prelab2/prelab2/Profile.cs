@@ -68,7 +68,7 @@ namespace ooplab
         }
         private void btnEditProfile_Click(object sender, EventArgs e)
         {
-            int flag = 1;
+            int flag = 1; //control for edited items
             //string phone = users.Userlist[k_user].Phone_number;
             Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             int ka=0;
@@ -96,7 +96,7 @@ namespace ooplab
             if (flag == 1)
             {
                 int j = 0;
-                int flag1 = 0;
+                int flag1 = 0; //Control for changing minimum salary
                 for (int k = 0; k < users.Userlist.Count; k++)
                 {
                     if (users.SelectedUser.Username == users.Userlist[k].Username)
@@ -122,7 +122,7 @@ namespace ooplab
                         if (users.Userlist[k].Minimum_salary != Convert.ToDouble(dgwProfile.Rows[j].Cells[6].Value))
                         {
                             lblError.Text = "Can not change minimum salary on this screen";
-                            flag1 = 1;
+                            flag1 = 1; 
                         }
                         j++;
                     }
