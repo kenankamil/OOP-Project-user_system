@@ -44,6 +44,7 @@
             this.cmbExperience = new System.Windows.Forms.ComboBox();
             this.cmbCity = new System.Windows.Forms.ComboBox();
             this.btnCalculate = new System.Windows.Forms.Button();
+            this.lblsalary = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblcity
@@ -182,7 +183,7 @@
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(365, 337);
+            this.btnCalculate.Location = new System.Drawing.Point(436, 339);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(75, 23);
             this.btnCalculate.TabIndex = 18;
@@ -190,11 +191,20 @@
             this.btnCalculate.UseVisualStyleBackColor = true;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
+            // lblsalary
+            // 
+            this.lblsalary.AutoSize = true;
+            this.lblsalary.Location = new System.Drawing.Point(395, 393);
+            this.lblsalary.Name = "lblsalary";
+            this.lblsalary.Size = new System.Drawing.Size(0, 17);
+            this.lblsalary.TabIndex = 19;
+            // 
             // SalaryCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 509);
+            this.Controls.Add(this.lblsalary);
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.chb18_);
             this.Controls.Add(this.chb7_18);
@@ -237,5 +247,6 @@
         private System.Windows.Forms.ComboBox cmbExperience;
         private System.Windows.Forms.ComboBox cmbCity;
         private System.Windows.Forms.Button btnCalculate;
+        private System.Windows.Forms.Label lblsalary;
     }
 }

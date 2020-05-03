@@ -46,6 +46,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPreviosPage = new System.Windows.Forms.Button();
+            this.btnprofile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -242,11 +243,22 @@
             this.btnPreviosPage.UseVisualStyleBackColor = false;
             this.btnPreviosPage.Click += new System.EventHandler(this.btnPreviosPage_Click);
             // 
+            // btnprofile
+            // 
+            this.btnprofile.Location = new System.Drawing.Point(260, 92);
+            this.btnprofile.Name = "btnprofile";
+            this.btnprofile.Size = new System.Drawing.Size(139, 35);
+            this.btnprofile.TabIndex = 28;
+            this.btnprofile.Text = "Profile";
+            this.btnprofile.UseVisualStyleBackColor = true;
+            this.btnprofile.Click += new System.EventHandler(this.btnprofile_Click);
+            // 
             // UserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 554);
+            this.Controls.Add(this.btnprofile);
             this.Controls.Add(this.btnPreviosPage);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -295,5 +307,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnPreviosPage;
+        private System.Windows.Forms.Button btnprofile;
     }
 }

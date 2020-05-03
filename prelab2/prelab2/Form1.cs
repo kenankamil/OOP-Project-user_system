@@ -53,6 +53,7 @@ namespace prelab2
                     temp.Address = values[6];
                     temp.E_mail = values[7];
                     temp.Photo = values[8];
+                    temp.Minimum_salary = Convert.ToDouble(values[9]);
                     users.Userlist.Add(temp);
                 }
             }
@@ -83,7 +84,6 @@ namespace prelab2
             {
                 if (item.Username == username && item.Password == password)
                 {
-                    UserManagement userManagement = new UserManagement();
                     user = item;
                     lblSonuc.Text = "Success";
                     lblSonuc.ForeColor = Color.Green;
@@ -92,6 +92,8 @@ namespace prelab2
                     //timer1.Start();     
                     Loaduser.Username = item.Username;
                     Loaduser.Type = item.Type;
+                    users.SelectedUser.Username = item.Username;
+                    users.SelectedUser.Type = item.Type;
                     if (item.Type == "Admin")
                     {
                         Admin admin = new Admin();

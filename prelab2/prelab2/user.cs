@@ -25,6 +25,7 @@ namespace prelab2
         private string management_task;
         private string about_family;
         private double minimum_salary;
+
         public User(string username, string password, string type)
         {
             this.username = username;

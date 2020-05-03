@@ -25,13 +25,14 @@ namespace ooplab
         }
         private void Profile_Load(object sender, EventArgs e)
         {
-            dgwProfile.ColumnCount = 6;
+            dgwProfile.ColumnCount = 7;
             dgwProfile.Columns[0].Name = "Name";
             dgwProfile.Columns[1].Name = "Surname";
             dgwProfile.Columns[2].Name = "Phone Number";
             dgwProfile.Columns[3].Name = "Address";
             dgwProfile.Columns[4].Name = "E-mail";
             dgwProfile.Columns[5].Name = "Password";
+            dgwProfile.Columns[6].Name = "Minimum Salary";
             dgwProfile.AllowUserToDeleteRows = true;
             dgwProfile.AllowUserToAddRows = false;
             dgwProfile.Rows.Clear();
@@ -40,13 +41,12 @@ namespace ooplab
             {
                 while (!reader.EndOfStream)
                 {
-                    Form1 form1 = new Form1();
                     string[] temp = { };
                     var line = reader.ReadLine();
                     var values = line.Split(';');
-                    if (values[0] == prelab2.Form1.Loaduser.Username)
+                    if (values[0] == users.SelectedUser.Username)
                     {
-                        temp = new string[] { values[3], values[4], values[5], values[6], values[7], values[1] };
+                        temp = new string[] { values[3], values[4], values[5], values[6], values[7], values[1], values[9] };
                         dgwProfile.Rows.Add(temp);
                         textBox1.Text = values[3];
                         //display photo dgw
@@ -75,7 +75,7 @@ namespace ooplab
             Match match = regex.Match(dgwProfile.Rows[0].Cells[4].Value.ToString());
             for (int k = 0; k < users.Userlist.Count; k++)
             {
-                if (Form1.Loaduser.Username == users.Userlist[k].Username)
+                if (users.SelectedUser.Username == users.Userlist[k].Username)
                 {
                     ka = k;
                 }
@@ -96,10 +96,10 @@ namespace ooplab
             if (flag == 1)
             {
                 int j = 0;
-
+                int flag1 = 0;
                 for (int k = 0; k < users.Userlist.Count; k++)
                 {
-                    if (Form1.Loaduser.Username == users.Userlist[k].Username)
+                    if (users.SelectedUser.Username == users.Userlist[k].Username)
                     {
                         //Save to Profile List from data grid view for update items
                         users.Userlist[k].Name = dgwProfile.Rows[j].Cells[0].Value.ToString(); //name
@@ -119,9 +119,15 @@ namespace ooplab
                         {
                             users.Userlist[k].Password = Hash256.ComputeSha256Hash(dgwProfile.Rows[j].Cells[5].Value.ToString()); //password
                         }
+                        if (users.Userlist[k].Minimum_salary != Convert.ToDouble(dgwProfile.Rows[j].Cells[6].Value))
+                        {
+                            lblError.Text = "Can not change minimum salary on this screen";
+                            flag1 = 1;
+                        }
                         j++;
                     }
                 }
+                if(flag1==0)
                 lblError.Text = "Success";
             }
             var userCSV = new StringBuilder();
@@ -131,13 +137,13 @@ namespace ooplab
             for (int a = 0; a < users.Userlist.Count(); a++)
             {
                     newLine = "";
-                    newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8}",
+                    newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9}",
                     users.Userlist[a].Username, users.Userlist[a].Password,
                     users.Userlist[a].Type, users.Userlist[a].Name,
                     users.Userlist[a].Surname,
                     users.Userlist[a].Phone_number,
                     users.Userlist[a].Address, users.Userlist[a].E_mail,
-                    users.Userlist[a].Photo);
+                    users.Userlist[a].Photo,users.Userlist[a].Minimum_salary);
                     userCSV.AppendLine(newLine);
                     File.AppendAllText(file, userCSV.ToString());
                     userCSV.Clear();
@@ -241,6 +247,13 @@ namespace ooplab
         private void label1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        //If click the button where Calculate Salary is written, can enter and update minimum salary
+        private void btnMinimumSalary_Click(object sender, EventArgs e)
+        {
+            SalaryCalculator salaryCalculator = new SalaryCalculator();
+            this.Hide();
+            salaryCalculator.Show();
         }
     }
 }

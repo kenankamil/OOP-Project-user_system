@@ -51,11 +51,10 @@ namespace ooplab
             profile.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Admin_Load(object sender, EventArgs e)
         {
-            SalaryCalculator salaryCalculator = new SalaryCalculator();
-            this.Hide();
-            salaryCalculator.Show();
+            users.SelectedUser.Username = Form1.Loaduser.Username;
+            users.SelectedUser.Type = Form1.Loaduser.Type;
         }
     }
 }
