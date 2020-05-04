@@ -245,12 +245,15 @@
             // 
             // btnprofile
             // 
+            this.btnprofile.BackColor = System.Drawing.Color.Black;
+            this.btnprofile.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnprofile.ForeColor = System.Drawing.Color.White;
             this.btnprofile.Location = new System.Drawing.Point(260, 92);
             this.btnprofile.Name = "btnprofile";
             this.btnprofile.Size = new System.Drawing.Size(139, 35);
             this.btnprofile.TabIndex = 28;
             this.btnprofile.Text = "Profile";
-            this.btnprofile.UseVisualStyleBackColor = true;
+            this.btnprofile.UseVisualStyleBackColor = false;
             this.btnprofile.Click += new System.EventHandler(this.btnprofile_Click);
             // 
             // UserManagement

@@ -21,6 +21,7 @@ namespace ooplab
         int baz_ücret = 5500;
         private void SalaryCalculator_Load(object sender, EventArgs e)
         {
+            cmbExperience.Items.Add("No experience ");
             cmbExperience.Items.Add("2-4");
             cmbExperience.Items.Add("5-9");
             cmbExperience.Items.Add("10-14");
@@ -37,7 +38,7 @@ namespace ooplab
             cmbCity.Items.Add("Adana, Mersin");
             cmbCity.Items.Add("Balıkesir, Çanakkale");
             cmbCity.Items.Add("Antalya, Isparta, Burdur ");
-            cmbCity.Items.Add("Others");
+            cmbCity.Items.Add("Başka bir sehir");
             cmbEducation.Items.Add("Meslek alanı ile ilgili yüksek lisans");
             cmbEducation.Items.Add("Meslek alanı ile ilgili doktora");
             cmbEducation.Items.Add("Meslek alanı ile ilgili doçentlik");
@@ -60,11 +61,10 @@ namespace ooplab
             cmbManagementTask.Items.Add("Bilgi İşlem Sorumlusu(Bilgi İşlem biriminde 5'ten çok bilişim personeli varsa)");
             cmbManagementTask.Items.Add("Bilgi İşlem Müdürü(Bilgi İşlem biriminde 5'ten çok bilişim personeli varsa)");
         }
-
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             int i;
-            for (i=0;i < users.Userlist.Count; i++)
+            for (i = 0; i < users.Userlist.Count; i++)
             {
                 if (users.SelectedUser.Username == users.Userlist[i].Username)
                 {
@@ -73,14 +73,16 @@ namespace ooplab
             }
             users.Userlist[i].Minimum_salary = 0;
             if (cmbExperience.SelectedIndex == 0)
-                users.Userlist[i].Minimum_salary += 0.6;
+                users.Userlist[i].Minimum_salary += 0;
             else if (cmbExperience.SelectedIndex == 1)
-                users.Userlist[i].Minimum_salary += 1.0;
+                users.Userlist[i].Minimum_salary += 0.6;
             else if (cmbExperience.SelectedIndex == 2)
-                users.Userlist[i].Minimum_salary += 1.20;
+                users.Userlist[i].Minimum_salary += 1.0;
             else if (cmbExperience.SelectedIndex == 3)
-                users.Userlist[i].Minimum_salary += 1.35;
+                users.Userlist[i].Minimum_salary += 1.20;
             else if (cmbExperience.SelectedIndex == 4)
+                users.Userlist[i].Minimum_salary += 1.35;
+            else if (cmbExperience.SelectedIndex == 5)
                 users.Userlist[i].Minimum_salary += 1.5;
             if (cmbCity.SelectedIndex == 0)
                 users.Userlist[i].Minimum_salary += 0.15;
@@ -155,21 +157,51 @@ namespace ooplab
             users.Userlist[i].Minimum_salary *= baz_ücret;
             if (users.Userlist[i].Type == "Part-time User")
                 users.Userlist[i].Minimum_salary /= 2;
-          
-                var csv = new StringBuilder();
-                string fileName = @"Data\user.csv";
+
+            var csv = new StringBuilder();
+            string fileName = @"Data\user.csv";
             File.WriteAllText(fileName, "");
-                for (int j = 0; j < users.Userlist.Count; j++)
-                {
+            for (int j = 0; j < users.Userlist.Count; j++)
+            {
                 var newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9}",
                         users.Userlist[j].Username, users.Userlist[j].Password,
                         users.Userlist[j].Type, users.Userlist[j].Name, users.Userlist[j].Surname,
                         users.Userlist[j].Phone_number,
-                        users.Userlist[j].Address, users.Userlist[j].E_mail, users.Userlist[j].Photo,users.Userlist[j].Minimum_salary);
-                        csv.AppendLine(newLine);                    
-                }
-                File.AppendAllText(@"Data\user.csv", csv.ToString());
-            lblsalary.Text = users.Userlist[i].Minimum_salary.ToString();
+                        users.Userlist[j].Address, users.Userlist[j].E_mail, users.Userlist[j].Photo, users.Userlist[j].Minimum_salary);
+                csv.AppendLine(newLine);
+            }
+            File.AppendAllText(@"Data\user.csv", csv.ToString());
+            lblsalary.Text = users.Userlist[i].Minimum_salary.ToString() + " TL";
+        }
+        private void lblclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
+        }
+        private void lblminimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+        private void btnPreviosPage_Click(object sender, EventArgs e)
+        {
+            if (Form1.Loaduser.Type == "Admin")
+            {
+                Admin goback = new Admin();
+                this.Close();
+                goback.Show();
+            }
+            else if (Form1.Loaduser.Type == "User")
+            {
+                UserForm goback = new UserForm();
+                this.Close();
+                goback.Show();
+            }
+            else
+            {
+                Part_time_User goback = new Part_time_User();
+                this.Close();
+                goback.Show();
+            }
         }
     }
 }

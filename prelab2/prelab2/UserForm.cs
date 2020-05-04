@@ -1,4 +1,5 @@
 ﻿using System;
+using prelab2;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,7 @@ namespace ooplab
         private void lblClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
         private void BtnNotes_Click(object sender, EventArgs e)
         {
@@ -42,6 +44,12 @@ namespace ooplab
             Profile profile = new Profile();
             this.Close();
             profile.Show();
+        }
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            Form1 logout = new Form1();
+            this.Close();
+            logout.ShowDialog();
         }
     }
 }

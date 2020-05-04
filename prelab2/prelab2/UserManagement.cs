@@ -16,7 +16,6 @@ namespace ooplab
     public partial class UserManagement : Form
     {
         int i;
-
         public UserManagement()
         {
             InitializeComponent();
@@ -125,6 +124,7 @@ namespace ooplab
         private void lblclose_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
         private void btnPreviosPage_Click(object sender, EventArgs e)
         {

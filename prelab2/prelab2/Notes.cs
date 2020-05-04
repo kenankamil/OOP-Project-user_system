@@ -141,6 +141,7 @@ namespace ooplab
         private void lblclose_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
         private void lblminimize_Click(object sender, EventArgs e)
         {

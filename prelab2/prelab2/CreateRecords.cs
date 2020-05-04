@@ -73,6 +73,7 @@ namespace ooplab
         private void lblClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
         private void btnPreviosPage_Click(object sender, EventArgs e)
         {

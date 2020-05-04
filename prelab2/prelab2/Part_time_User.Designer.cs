@@ -38,6 +38,7 @@
             this.lblType1 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.btnPartProfile = new System.Windows.Forms.Button();
+            this.btnlogout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             this.btnPhonebook.BackColor = System.Drawing.SystemColors.WindowText;
             this.btnPhonebook.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPhonebook.ForeColor = System.Drawing.Color.White;
-            this.btnPhonebook.Location = new System.Drawing.Point(99, 244);
+            this.btnPhonebook.Location = new System.Drawing.Point(99, 218);
             this.btnPhonebook.Name = "btnPhonebook";
             this.btnPhonebook.Size = new System.Drawing.Size(171, 46);
             this.btnPhonebook.TabIndex = 0;
@@ -115,7 +116,7 @@
             this.BtnNotes.BackColor = System.Drawing.SystemColors.WindowText;
             this.BtnNotes.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnNotes.ForeColor = System.Drawing.Color.White;
-            this.BtnNotes.Location = new System.Drawing.Point(99, 296);
+            this.BtnNotes.Location = new System.Drawing.Point(99, 270);
             this.BtnNotes.Name = "BtnNotes";
             this.BtnNotes.Size = new System.Drawing.Size(171, 41);
             this.BtnNotes.TabIndex = 33;
@@ -148,7 +149,7 @@
             this.btnPartProfile.BackColor = System.Drawing.Color.Black;
             this.btnPartProfile.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPartProfile.ForeColor = System.Drawing.Color.White;
-            this.btnPartProfile.Location = new System.Drawing.Point(99, 193);
+            this.btnPartProfile.Location = new System.Drawing.Point(99, 167);
             this.btnPartProfile.Name = "btnPartProfile";
             this.btnPartProfile.Size = new System.Drawing.Size(171, 45);
             this.btnPartProfile.TabIndex = 36;
@@ -156,11 +157,25 @@
             this.btnPartProfile.UseVisualStyleBackColor = false;
             this.btnPartProfile.Click += new System.EventHandler(this.btnPartProfile_Click);
             // 
+            // btnlogout
+            // 
+            this.btnlogout.BackColor = System.Drawing.Color.Maroon;
+            this.btnlogout.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnlogout.ForeColor = System.Drawing.Color.White;
+            this.btnlogout.Location = new System.Drawing.Point(99, 317);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(171, 40);
+            this.btnlogout.TabIndex = 40;
+            this.btnlogout.Text = "Logout";
+            this.btnlogout.UseVisualStyleBackColor = false;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
+            // 
             // Part_time_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 450);
+            this.Controls.Add(this.btnlogout);
             this.Controls.Add(this.btnPartProfile);
             this.Controls.Add(this.lblType1);
             this.Controls.Add(this.lblId);
@@ -191,5 +206,6 @@
         private System.Windows.Forms.Label lblType1;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnPartProfile;
+        private System.Windows.Forms.Button btnlogout;
     }
 }
