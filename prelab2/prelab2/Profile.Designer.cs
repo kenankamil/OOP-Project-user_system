@@ -34,7 +34,6 @@
             this.btnAddPhoto = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
             this.btnPreviosPage = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -87,7 +86,7 @@
             this.btnAddPhoto.ForeColor = System.Drawing.Color.White;
             this.btnAddPhoto.Location = new System.Drawing.Point(212, 175);
             this.btnAddPhoto.Name = "btnAddPhoto";
-            this.btnAddPhoto.Size = new System.Drawing.Size(136, 37);
+            this.btnAddPhoto.Size = new System.Drawing.Size(147, 37);
             this.btnAddPhoto.TabIndex = 35;
             this.btnAddPhoto.Text = "Browse Photo";
             this.btnAddPhoto.UseVisualStyleBackColor = false;
@@ -113,14 +112,6 @@
             this.btnPreviosPage.Text = "<--";
             this.btnPreviosPage.UseVisualStyleBackColor = false;
             this.btnPreviosPage.Click += new System.EventHandler(this.btnPreviosPage_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 388);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 38;
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // panel2
             // 
@@ -174,18 +165,21 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(282, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 21);
+            this.label4.Size = new System.Drawing.Size(84, 21);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Profile";
+            this.label4.Text = "PROFILE";
             // 
             // btnMinimumSalary
             // 
+            this.btnMinimumSalary.BackColor = System.Drawing.Color.Black;
+            this.btnMinimumSalary.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMinimumSalary.ForeColor = System.Drawing.Color.White;
             this.btnMinimumSalary.Location = new System.Drawing.Point(212, 129);
             this.btnMinimumSalary.Name = "btnMinimumSalary";
-            this.btnMinimumSalary.Size = new System.Drawing.Size(136, 30);
+            this.btnMinimumSalary.Size = new System.Drawing.Size(147, 40);
             this.btnMinimumSalary.TabIndex = 41;
             this.btnMinimumSalary.Text = "Calculate Salary";
-            this.btnMinimumSalary.UseVisualStyleBackColor = true;
+            this.btnMinimumSalary.UseVisualStyleBackColor = false;
             this.btnMinimumSalary.Click += new System.EventHandler(this.btnMinimumSalary_Click);
             // 
             // Profile
@@ -197,7 +191,6 @@
             this.Controls.Add(this.btnMinimumSalary);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnPreviosPage);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnAddPhoto);
@@ -226,7 +219,6 @@
         private System.Windows.Forms.Button btnAddPhoto;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Button btnPreviosPage;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;

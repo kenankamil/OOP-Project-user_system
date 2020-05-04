@@ -19,6 +19,7 @@ namespace prelab2
     {
         User user = null;
         private static User loaduser = new User();
+        int login_flag = 0;
         public static User Loaduser { get => loaduser; set => loaduser = value; }
         public Form1()
         {
@@ -94,23 +95,29 @@ namespace prelab2
                     Loaduser.Type = item.Type;
                     users.SelectedUser.Username = item.Username;
                     users.SelectedUser.Type = item.Type;
-                    if (item.Type == "Admin")
+                    if (login_flag == 0)
                     {
-                        Admin admin = new Admin();
-                        this.Hide();
-                        admin.Show();
-                    }
-                    if (item.Type == "User")
-                    {
-                        UserForm userform = new UserForm();
-                        this.Hide();
-                        userform.Show();
-                    }
-                    if (item.Type == "Part-time User")
-                    {
-                        Part_time_User parttimeuserform = new Part_time_User();
-                        this.Hide();
-                        parttimeuserform.Show();
+                        if (item.Type == "Admin")
+                        {
+                            Admin admin = new Admin();
+                            this.Hide();
+                            admin.Show();
+                            login_flag = 99;
+                        }
+                        if (item.Type == "User")
+                        {
+                            UserForm userform = new UserForm();
+                            this.Hide();
+                            userform.Show();
+                            login_flag = 99;
+                        }
+                        if (item.Type == "Part-time User")
+                        {
+                            Part_time_User parttimeuserform = new Part_time_User();
+                            this.Hide();
+                            parttimeuserform.Show();
+                            login_flag = 99;
+                        }
                     }
                 }
             }
@@ -146,6 +153,7 @@ namespace prelab2
         private void label1_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
     }
 }

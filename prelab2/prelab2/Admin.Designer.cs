@@ -40,6 +40,7 @@
             this.btnPhoneBookEdit = new System.Windows.Forms.Button();
             this.BtnNotes = new System.Windows.Forms.Button();
             this.btnAdminProfile = new System.Windows.Forms.Button();
+            this.btnlogout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,7 +137,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 360);
+            this.panel2.Location = new System.Drawing.Point(0, 413);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(390, 60);
             this.panel2.TabIndex = 27;
@@ -180,11 +181,25 @@
             this.btnAdminProfile.UseVisualStyleBackColor = false;
             this.btnAdminProfile.Click += new System.EventHandler(this.btnAdminProfile_Click);
             // 
+            // btnlogout
+            // 
+            this.btnlogout.BackColor = System.Drawing.Color.Maroon;
+            this.btnlogout.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnlogout.ForeColor = System.Drawing.Color.White;
+            this.btnlogout.Location = new System.Drawing.Point(107, 339);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(171, 40);
+            this.btnlogout.TabIndex = 32;
+            this.btnlogout.Text = "Logout";
+            this.btnlogout.UseVisualStyleBackColor = false;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 420);
+            this.ClientSize = new System.Drawing.Size(390, 473);
+            this.Controls.Add(this.btnlogout);
             this.Controls.Add(this.btnAdminProfile);
             this.Controls.Add(this.BtnNotes);
             this.Controls.Add(this.btnPhoneBookEdit);
@@ -220,5 +235,6 @@
         private System.Windows.Forms.Button btnPhoneBookEdit;
         private System.Windows.Forms.Button BtnNotes;
         private System.Windows.Forms.Button btnAdminProfile;
+        private System.Windows.Forms.Button btnlogout;
     }
 }

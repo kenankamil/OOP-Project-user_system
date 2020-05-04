@@ -110,7 +110,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(434, 60);
+            this.panel1.Size = new System.Drawing.Size(423, 60);
             this.panel1.TabIndex = 25;
             // 
             // lblsignup
@@ -129,7 +129,7 @@
             this.lblminimize.AutoSize = true;
             this.lblminimize.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblminimize.ForeColor = System.Drawing.Color.White;
-            this.lblminimize.Location = new System.Drawing.Point(541, 9);
+            this.lblminimize.Location = new System.Drawing.Point(367, 0);
             this.lblminimize.Name = "lblminimize";
             this.lblminimize.Size = new System.Drawing.Size(21, 21);
             this.lblminimize.TabIndex = 1;
@@ -141,7 +141,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(568, 9);
+            this.label1.Location = new System.Drawing.Point(395, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(22, 21);
             this.label1.TabIndex = 0;
@@ -204,7 +204,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 756);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(434, 60);
+            this.panel2.Size = new System.Drawing.Size(423, 60);
             this.panel2.TabIndex = 32;
             // 
             // btnPreviosPage
@@ -351,7 +351,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(434, 816);
+            this.ClientSize = new System.Drawing.Size(423, 816);
             this.Controls.Add(this.pbPhoto);
             this.Controls.Add(this.btnAddFromFile);
             this.Controls.Add(this.lblemail);

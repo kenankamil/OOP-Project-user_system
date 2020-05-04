@@ -31,6 +31,7 @@ namespace ooplab
         private void label1_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
         private void btnPhoneBookEdit_Click(object sender, EventArgs e)
         {
@@ -50,11 +51,16 @@ namespace ooplab
             this.Close();
             profile.Show();
         }
-
         private void Admin_Load(object sender, EventArgs e)
         {
             users.SelectedUser.Username = Form1.Loaduser.Username;
             users.SelectedUser.Type = Form1.Loaduser.Type;
+        }
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            Form1 logout = new Form1();
+            this.Close();
+            logout.ShowDialog();
         }
     }
 }

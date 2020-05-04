@@ -18,10 +18,10 @@ namespace ooplab
         Stack<Func<object>> undoStack = new Stack<Func<object>>();
         Stack<Func<object>> redoStack = new Stack<Func<object>>();
         string file = @"Data\user.csv";
+        int flag = 1; //control for edited items
         public Profile()
         {
             InitializeComponent();
-            textBox1.KeyDown += textBox1_KeyDown;
         }
         private void Profile_Load(object sender, EventArgs e)
         {
@@ -48,7 +48,6 @@ namespace ooplab
                     {
                         temp = new string[] { values[3], values[4], values[5], values[6], values[7], values[1], values[9] };
                         dgwProfile.Rows.Add(temp);
-                        textBox1.Text = values[3];
                         //display photo dgw
                         string base64String = values[8];
                         byte[] imageBytes = Convert.FromBase64String(base64String);
@@ -68,7 +67,6 @@ namespace ooplab
         }
         private void btnEditProfile_Click(object sender, EventArgs e)
         {
-            int flag = 1; //control for edited items
             //string phone = users.Userlist[k_user].Phone_number;
             Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             int ka=0;
@@ -121,7 +119,7 @@ namespace ooplab
                         }
                         if (users.Userlist[k].Minimum_salary != Convert.ToDouble(dgwProfile.Rows[j].Cells[6].Value))
                         {
-                            lblError.Text = "Can not change minimum salary on this screen";
+                            lblError.Text = "Can't change minumum salary on this screen";
                             flag1 = 1; 
                         }
                         j++;
@@ -247,6 +245,7 @@ namespace ooplab
         private void label1_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
         //If click the button where Calculate Salary is written, can enter and update minimum salary
         private void btnMinimumSalary_Click(object sender, EventArgs e)

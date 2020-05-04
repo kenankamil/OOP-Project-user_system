@@ -38,6 +38,7 @@
             this.lblType1 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.btnUserProfile = new System.Windows.Forms.Button();
+            this.btnlogout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,9 +47,9 @@
             this.btnPhoneBook.BackColor = System.Drawing.SystemColors.WindowText;
             this.btnPhoneBook.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPhoneBook.ForeColor = System.Drawing.Color.White;
-            this.btnPhoneBook.Location = new System.Drawing.Point(139, 219);
+            this.btnPhoneBook.Location = new System.Drawing.Point(118, 219);
             this.btnPhoneBook.Name = "btnPhoneBook";
-            this.btnPhoneBook.Size = new System.Drawing.Size(115, 41);
+            this.btnPhoneBook.Size = new System.Drawing.Size(171, 41);
             this.btnPhoneBook.TabIndex = 1;
             this.btnPhoneBook.Text = "PhoneBook";
             this.btnPhoneBook.UseVisualStyleBackColor = false;
@@ -115,9 +116,9 @@
             this.BtnNotes.BackColor = System.Drawing.SystemColors.WindowText;
             this.BtnNotes.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnNotes.ForeColor = System.Drawing.Color.White;
-            this.BtnNotes.Location = new System.Drawing.Point(139, 266);
+            this.BtnNotes.Location = new System.Drawing.Point(118, 266);
             this.BtnNotes.Name = "BtnNotes";
-            this.BtnNotes.Size = new System.Drawing.Size(115, 41);
+            this.BtnNotes.Size = new System.Drawing.Size(171, 41);
             this.BtnNotes.TabIndex = 31;
             this.BtnNotes.Text = "Notes";
             this.BtnNotes.UseVisualStyleBackColor = false;
@@ -127,7 +128,7 @@
             // 
             this.lblType1.AutoSize = true;
             this.lblType1.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblType1.Location = new System.Drawing.Point(220, 131);
+            this.lblType1.Location = new System.Drawing.Point(215, 108);
             this.lblType1.Name = "lblType1";
             this.lblType1.Size = new System.Drawing.Size(39, 17);
             this.lblType1.TabIndex = 37;
@@ -137,7 +138,7 @@
             // 
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblId.Location = new System.Drawing.Point(144, 131);
+            this.lblId.Location = new System.Drawing.Point(139, 108);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(47, 17);
             this.lblId.TabIndex = 36;
@@ -156,11 +157,25 @@
             this.btnUserProfile.UseVisualStyleBackColor = false;
             this.btnUserProfile.Click += new System.EventHandler(this.btnUserProfile_Click);
             // 
+            // btnlogout
+            // 
+            this.btnlogout.BackColor = System.Drawing.Color.Maroon;
+            this.btnlogout.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnlogout.ForeColor = System.Drawing.Color.White;
+            this.btnlogout.Location = new System.Drawing.Point(118, 313);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(171, 40);
+            this.btnlogout.TabIndex = 39;
+            this.btnlogout.Text = "Logout";
+            this.btnlogout.UseVisualStyleBackColor = false;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 450);
+            this.Controls.Add(this.btnlogout);
             this.Controls.Add(this.btnUserProfile);
             this.Controls.Add(this.lblType1);
             this.Controls.Add(this.lblId);
@@ -190,5 +205,6 @@
         private System.Windows.Forms.Label lblType1;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnUserProfile;
+        private System.Windows.Forms.Button btnlogout;
     }
 }

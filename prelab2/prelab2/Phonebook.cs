@@ -22,7 +22,6 @@ namespace ooplab
         // Can change something in data grid view(UPDATE)
         private void Phonebook_Load(object sender, EventArgs e)
         {
-
             lblInfo.Text = "Don't forget to save after DELETE and UPTADE";
             if (!File.Exists(fileNamephonebook))
             {
@@ -145,6 +144,7 @@ namespace ooplab
         private void lblClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
         private void btnPreviosPage_Click(object sender, EventArgs e)
         {

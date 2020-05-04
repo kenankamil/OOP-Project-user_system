@@ -49,7 +49,6 @@ namespace prelab2
                 }
                 Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
                 Match match = regex.Match(txte_mail.Text);
-             
                  if (!match.Success)
                 {
                     flag = 0;
@@ -89,6 +88,7 @@ namespace prelab2
         private void label1_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
         private void btnPreviosPage_Click(object sender, EventArgs e)
         {
