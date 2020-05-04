@@ -67,9 +67,9 @@ namespace prelab2
                 }
                 if (flag == 99)
                 {
-                    var newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8}", username, password, type, txtname.Text, txtsurname.Text,
+                    var newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9}", username, password, type, txtname.Text, txtsurname.Text,
                     String.Format("{0:(###) ### ## ##}", Convert.ToInt64(txtphonenumber.Text)),
-                    txtaddress.Text, txte_mail.Text,base64photo);                  
+                    txtaddress.Text, txte_mail.Text,base64photo,"0");          //default value of minimum salary is 0        
                     csv.AppendLine(newLine);
                     File.AppendAllText(@"Data\user.csv", csv.ToString());
                     lblhata.Text = "Success";

@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblminimize = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnMinimumSalary = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctPhoto)).BeginInit();
             this.panel1.SuspendLayout();
@@ -84,7 +85,7 @@
             this.btnAddPhoto.BackColor = System.Drawing.Color.Black;
             this.btnAddPhoto.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAddPhoto.ForeColor = System.Drawing.Color.White;
-            this.btnAddPhoto.Location = new System.Drawing.Point(194, 175);
+            this.btnAddPhoto.Location = new System.Drawing.Point(212, 175);
             this.btnAddPhoto.Name = "btnAddPhoto";
             this.btnAddPhoto.Size = new System.Drawing.Size(136, 37);
             this.btnAddPhoto.TabIndex = 35;
@@ -95,7 +96,7 @@
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(629, 256);
+            this.lblError.Location = new System.Drawing.Point(241, 367);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(0, 17);
             this.lblError.TabIndex = 36;
@@ -177,12 +178,23 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Profile";
             // 
+            // btnMinimumSalary
+            // 
+            this.btnMinimumSalary.Location = new System.Drawing.Point(212, 129);
+            this.btnMinimumSalary.Name = "btnMinimumSalary";
+            this.btnMinimumSalary.Size = new System.Drawing.Size(136, 30);
+            this.btnMinimumSalary.TabIndex = 41;
+            this.btnMinimumSalary.Text = "Calculate Salary";
+            this.btnMinimumSalary.UseVisualStyleBackColor = true;
+            this.btnMinimumSalary.Click += new System.EventHandler(this.btnMinimumSalary_Click);
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(631, 483);
+            this.Controls.Add(this.btnMinimumSalary);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.textBox1);
@@ -220,5 +232,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblminimize;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnMinimumSalary;
     }
 }

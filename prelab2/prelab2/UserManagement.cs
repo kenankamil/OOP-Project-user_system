@@ -16,6 +16,7 @@ namespace ooplab
     public partial class UserManagement : Form
     {
         int i;
+
         public UserManagement()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace ooplab
         {
             for (int i = 0; i < users.Userlist.Count; i++)
             {
+                if(users.Userlist[i].Username!=users.SelectedUser.Username)
                 cmbusername.Items.Add(users.Userlist[i].Username);
             }
             cmbNewType.Items.Add("Admin");
@@ -32,6 +34,7 @@ namespace ooplab
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            users.SelectedUser.Username = this.cmbusername.SelectedItem.ToString();
             string temp = this.cmbusername.SelectedItem.ToString();
             {
                 //for(int i=0;i<users.Userlist.Count;i++)
@@ -50,6 +53,7 @@ namespace ooplab
                             users.Userlist[i].Password + Environment.NewLine + "Type: " + users.Userlist[i].Type;
                         break;
                     }
+                    users.SelectedUser.Type = users.Userlist[i].Type;
                 }
             }
         }
@@ -67,11 +71,11 @@ namespace ooplab
                     for (int j = 0; j < users.Userlist.Count; j++)
                     {
                         {
-                            var newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8}",
+                            var newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9}",
                             users.Userlist[j].Username, users.Userlist[j].Password,
                             users.Userlist[j].Type, users.Userlist[j].Name, users.Userlist[j].Surname,
                             users.Userlist[j].Phone_number,
-                            users.Userlist[j].Address, users.Userlist[j].E_mail, users.Userlist[j].Photo);              
+                            users.Userlist[j].Address, users.Userlist[j].E_mail, users.Userlist[j].Photo,users.Userlist[j].Minimum_salary);              
                             csv.AppendLine(newLine);
                             lblmassage.Text = "Success";
                             txtList.Text = "Username: " + users.Userlist[i].Username + Environment.NewLine + "Password: " +
@@ -99,11 +103,11 @@ namespace ooplab
                 for (int j = 0; j < users.Userlist.Count; j++)
                 {
                     {
-                        var newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8}",
+                        var newLine = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9}",
                         users.Userlist[j].Username, users.Userlist[j].Password,
                         users.Userlist[j].Type, users.Userlist[j].Name, users.Userlist[j].Surname,
                         users.Userlist[j].Phone_number,
-                        users.Userlist[j].Address, users.Userlist[j].E_mail, users.Userlist[j].Photo);
+                        users.Userlist[j].Address, users.Userlist[j].E_mail, users.Userlist[j].Photo,users.Userlist[j].Minimum_salary);
                         csv.AppendLine(newLine);
                         lblmassage.Text = "Success";
                         txtList.Text = "Username: " + users.Userlist[i].Username + Environment.NewLine + "Password: " +
@@ -142,6 +146,13 @@ namespace ooplab
                 this.Close();
                 goback.Show();
             }
+        }
+
+        private void btnprofile_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile();
+            this.Close();
+            profile.Show();
         }
     }
 }

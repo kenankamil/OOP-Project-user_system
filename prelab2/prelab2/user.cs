@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,14 @@ namespace prelab2
         private string address;
         private string e_mail;
         private string photo;
+        private int experience;
+        private string city;
+        private string education;
+        private string foreign_language;
+        private string management_task;
+        private string about_family;
+        private double minimum_salary;
+
         public User(string username, string password, string type)
         {
             this.username = username;
@@ -33,5 +42,12 @@ namespace prelab2
         public string Address { get => address; set => address = value; }
         public string E_mail { get => e_mail; set => e_mail = value; }
         public string Photo { get => photo; set => photo = value; }
+        public int Experience { get => experience; set => experience = value; }
+        public string City { get => city; set => city = value; }
+        public string Education { get => education; set => education = value; }
+        public string Foreign_language { get => foreign_language; set => foreign_language = value; }
+        public string Management_task { get => management_task; set => management_task = value; }
+        public string About_family { get => about_family; set => about_family = value; }
+        public double Minimum_salary { get => minimum_salary; set => minimum_salary = value; }
     }
 }

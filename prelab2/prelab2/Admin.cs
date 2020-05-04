@@ -50,5 +50,11 @@ namespace ooplab
             this.Close();
             profile.Show();
         }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+            users.SelectedUser.Username = Form1.Loaduser.Username;
+            users.SelectedUser.Type = Form1.Loaduser.Type;
+        }
     }
 }

@@ -105,6 +105,12 @@
     <Compile Include="Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalaryCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalaryCalculator.Designer.cs">
+      <DependentUpon>SalaryCalculator.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -161,6 +167,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SalaryCalculator.resx">
+      <DependentUpon>SalaryCalculator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
