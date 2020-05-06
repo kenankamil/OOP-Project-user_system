@@ -81,7 +81,7 @@ namespace ooplab
                     sc.Port = 587;
                     sc.Host = "smtp.gmail.com";
                     sc.EnableSsl = true;
-                    sc.Credentials = new NetworkCredential("smtpicinmail@gmail.com", Hash256.ComputeSha256Hash("a"));
+                    sc.Credentials = new NetworkCredential("", "");
 
                     MailMessage mail = new MailMessage();
                     mail.From = new MailAddress("smtpicinmail@gmail.com", "OOP Project");
