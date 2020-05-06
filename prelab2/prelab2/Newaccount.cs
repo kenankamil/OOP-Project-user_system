@@ -87,8 +87,11 @@ namespace prelab2
         }
         private void label1_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Application.Exit();
+            if (MessageBox.Show("Really want to exit ?", "Exit!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Close();
+                Application.Exit();
+            }
         }
         private void btnPreviosPage_Click(object sender, EventArgs e)
         {
@@ -117,10 +120,6 @@ namespace prelab2
             }
             // image file path    
             string path = open.FileName;
-            //var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(path);
-            //string base64 = System.Convert.ToBase64String(plainTextBytes);          
-            //base64photo = base64;
-            //I did not decide corrrect one or one of them is correct
             if (path != "")
             {  
                 byte[] imageArray = System.IO.File.ReadAllBytes(path);
