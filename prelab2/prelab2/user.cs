@@ -26,11 +26,12 @@ namespace prelab2
         private string about_family;
         private double minimum_salary;
 
-        public User(string username, string password, string type)
+        public User(string username, string password, string type, string e_mail)
         {
             this.username = username;
             this.password = password;
             this.type = type;
+            this.e_mail = e_mail;
         }
         public User() { }
         public string Username { get => username; set => username = value; }

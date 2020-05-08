@@ -72,8 +72,11 @@ namespace ooplab
         }
         private void lblClose_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Application.Exit();
+            if (MessageBox.Show("Really want to exit ?", "Exit!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Close();
+                Application.Exit();
+            }
         }
         private void btnPreviosPage_Click(object sender, EventArgs e)
         {
