@@ -14,8 +14,7 @@ namespace ooplab
 {
     public partial class Reminder : Form
     {
-        string fileReminders = @"Data\reminders.csv";
-        
+        string fileReminders = @"Data\reminders.csv";       
         public Reminder()
         {
             InitializeComponent();
@@ -50,7 +49,6 @@ namespace ooplab
 
         private void btnReminderAdd_Click(object sender, EventArgs e)
         {
-
             AddReminders addReminders = new AddReminders();
             this.Close();
             addReminders.Show();
@@ -83,7 +81,6 @@ namespace ooplab
                     }
                 }
             }
-
         }
 
         private void btnReminderUpdate_Click(object sender, EventArgs e)
@@ -156,8 +153,6 @@ namespace ooplab
                 File.AppendAllText(@"Data\reminders.csv", reminderCSV.ToString());
                 reminderCSV.Clear();
             }
-        }
-
-        
+        }        
     }
 }

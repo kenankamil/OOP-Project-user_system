@@ -169,9 +169,7 @@ namespace ooplab
                 this.Close();
                 goback.Show();
             }
-        }
-
-       
+        }       
     }
 }
 

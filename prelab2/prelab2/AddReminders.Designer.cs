@@ -201,7 +201,6 @@
             this.Name = "AddReminders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddReminders";
-            this.Load += new System.EventHandler(this.AddReminders_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
