@@ -39,6 +39,7 @@
             this.lblId = new System.Windows.Forms.Label();
             this.btnUserProfile = new System.Windows.Forms.Button();
             this.btnlogout = new System.Windows.Forms.Button();
+            this.btnUserReminders = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.btnPhoneBook.BackColor = System.Drawing.SystemColors.WindowText;
             this.btnPhoneBook.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPhoneBook.ForeColor = System.Drawing.Color.White;
-            this.btnPhoneBook.Location = new System.Drawing.Point(118, 219);
+            this.btnPhoneBook.Location = new System.Drawing.Point(118, 204);
             this.btnPhoneBook.Name = "btnPhoneBook";
             this.btnPhoneBook.Size = new System.Drawing.Size(171, 41);
             this.btnPhoneBook.TabIndex = 1;
@@ -116,7 +117,7 @@
             this.BtnNotes.BackColor = System.Drawing.SystemColors.WindowText;
             this.BtnNotes.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnNotes.ForeColor = System.Drawing.Color.White;
-            this.BtnNotes.Location = new System.Drawing.Point(118, 266);
+            this.BtnNotes.Location = new System.Drawing.Point(118, 251);
             this.BtnNotes.Name = "BtnNotes";
             this.BtnNotes.Size = new System.Drawing.Size(171, 41);
             this.BtnNotes.TabIndex = 31;
@@ -149,7 +150,7 @@
             this.btnUserProfile.BackColor = System.Drawing.Color.Black;
             this.btnUserProfile.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserProfile.ForeColor = System.Drawing.Color.White;
-            this.btnUserProfile.Location = new System.Drawing.Point(118, 168);
+            this.btnUserProfile.Location = new System.Drawing.Point(118, 153);
             this.btnUserProfile.Name = "btnUserProfile";
             this.btnUserProfile.Size = new System.Drawing.Size(171, 45);
             this.btnUserProfile.TabIndex = 38;
@@ -162,7 +163,7 @@
             this.btnlogout.BackColor = System.Drawing.Color.Maroon;
             this.btnlogout.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnlogout.ForeColor = System.Drawing.Color.White;
-            this.btnlogout.Location = new System.Drawing.Point(118, 313);
+            this.btnlogout.Location = new System.Drawing.Point(118, 344);
             this.btnlogout.Name = "btnlogout";
             this.btnlogout.Size = new System.Drawing.Size(171, 40);
             this.btnlogout.TabIndex = 39;
@@ -170,11 +171,25 @@
             this.btnlogout.UseVisualStyleBackColor = false;
             this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
+            // btnUserReminders
+            // 
+            this.btnUserReminders.BackColor = System.Drawing.SystemColors.WindowText;
+            this.btnUserReminders.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserReminders.ForeColor = System.Drawing.Color.White;
+            this.btnUserReminders.Location = new System.Drawing.Point(118, 298);
+            this.btnUserReminders.Name = "btnUserReminders";
+            this.btnUserReminders.Size = new System.Drawing.Size(171, 41);
+            this.btnUserReminders.TabIndex = 40;
+            this.btnUserReminders.Text = "Reminder";
+            this.btnUserReminders.UseVisualStyleBackColor = false;
+            this.btnUserReminders.Click += new System.EventHandler(this.btnUserReminders_Click);
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 450);
+            this.Controls.Add(this.btnUserReminders);
             this.Controls.Add(this.btnlogout);
             this.Controls.Add(this.btnUserProfile);
             this.Controls.Add(this.lblType1);
@@ -206,5 +221,6 @@
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnUserProfile;
         private System.Windows.Forms.Button btnlogout;
+        private System.Windows.Forms.Button btnUserReminders;
     }
 }

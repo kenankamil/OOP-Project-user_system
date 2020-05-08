@@ -37,8 +37,11 @@ namespace ooplab
         }
         private void lblclose_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Application.Exit();
+            if (MessageBox.Show("Really want to exit ?", "Exit!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Close();
+                Application.Exit();
+            }
         }
         private void lblminimize_Click(object sender, EventArgs e)
         {
@@ -49,6 +52,13 @@ namespace ooplab
             Form1 logout = new Form1();
             this.Close();
             logout.ShowDialog();
+        }
+
+        private void btnPartReminder_Click(object sender, EventArgs e)
+        {
+            Reminder reminder = new Reminder();
+            this.Close();
+            reminder.Show();
         }
     }
 }

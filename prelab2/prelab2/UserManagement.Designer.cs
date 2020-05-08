@@ -47,6 +47,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPreviosPage = new System.Windows.Forms.Button();
             this.btnprofile = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.lblmessage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,11 +88,11 @@
             this.btnsave.BackColor = System.Drawing.Color.Black;
             this.btnsave.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnsave.ForeColor = System.Drawing.Color.White;
-            this.btnsave.Location = new System.Drawing.Point(132, 380);
+            this.btnsave.Location = new System.Drawing.Point(13, 380);
             this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(100, 34);
+            this.btnsave.Size = new System.Drawing.Size(219, 34);
             this.btnsave.TabIndex = 5;
-            this.btnsave.Text = "Save";
+            this.btnsave.Text = "Save and Send mail";
             this.btnsave.UseVisualStyleBackColor = false;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
@@ -135,7 +137,7 @@
             this.lblmassage.AutoSize = true;
             this.lblmassage.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblmassage.ForeColor = System.Drawing.Color.Green;
-            this.lblmassage.Location = new System.Drawing.Point(275, 437);
+            this.lblmassage.Location = new System.Drawing.Point(21, 457);
             this.lblmassage.Name = "lblmassage";
             this.lblmassage.Size = new System.Drawing.Size(0, 17);
             this.lblmassage.TabIndex = 10;
@@ -225,7 +227,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 494);
+            this.panel2.Location = new System.Drawing.Point(0, 523);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(640, 60);
             this.panel2.TabIndex = 26;
@@ -235,7 +237,7 @@
             this.btnPreviosPage.BackColor = System.Drawing.SystemColors.WindowText;
             this.btnPreviosPage.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPreviosPage.ForeColor = System.Drawing.Color.White;
-            this.btnPreviosPage.Location = new System.Drawing.Point(13, 437);
+            this.btnPreviosPage.Location = new System.Drawing.Point(12, 484);
             this.btnPreviosPage.Name = "btnPreviosPage";
             this.btnPreviosPage.Size = new System.Drawing.Size(75, 34);
             this.btnPreviosPage.TabIndex = 27;
@@ -256,11 +258,30 @@
             this.btnprofile.UseVisualStyleBackColor = false;
             this.btnprofile.Click += new System.EventHandler(this.btnprofile_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(15, 420);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(217, 23);
+            this.progressBar1.TabIndex = 29;
+            // 
+            // lblmessage
+            // 
+            this.lblmessage.AutoSize = true;
+            this.lblmessage.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblmessage.ForeColor = System.Drawing.Color.Green;
+            this.lblmessage.Location = new System.Drawing.Point(399, 397);
+            this.lblmessage.Name = "lblmessage";
+            this.lblmessage.Size = new System.Drawing.Size(0, 17);
+            this.lblmessage.TabIndex = 30;
+            // 
             // UserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 554);
+            this.ClientSize = new System.Drawing.Size(640, 583);
+            this.Controls.Add(this.lblmessage);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnprofile);
             this.Controls.Add(this.btnPreviosPage);
             this.Controls.Add(this.panel2);
@@ -311,5 +332,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnPreviosPage;
         private System.Windows.Forms.Button btnprofile;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label lblmessage;
     }
 }

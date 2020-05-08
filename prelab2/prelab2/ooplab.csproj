@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddReminders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddReminders.Designer.cs">
+      <DependentUpon>AddReminders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,13 @@
     <Compile Include="Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reminder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reminder.Designer.cs">
+      <DependentUpon>Reminder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RemindersRecords.cs" />
     <Compile Include="SalaryCalculator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +146,9 @@
       <DependentUpon>UserManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="users.cs" />
+    <EmbeddedResource Include="AddReminders.resx">
+      <DependentUpon>AddReminders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +183,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reminder.resx">
+      <DependentUpon>Reminder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SalaryCalculator.resx">
       <DependentUpon>SalaryCalculator.cs</DependentUpon>
     </EmbeddedResource>

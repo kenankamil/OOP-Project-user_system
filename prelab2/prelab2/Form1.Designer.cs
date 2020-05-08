@@ -78,7 +78,7 @@
             this.btnnewaccount.ForeColor = System.Drawing.Color.White;
             this.btnnewaccount.Location = new System.Drawing.Point(192, 243);
             this.btnnewaccount.Name = "btnnewaccount";
-            this.btnnewaccount.Size = new System.Drawing.Size(128, 34);
+            this.btnnewaccount.Size = new System.Drawing.Size(128, 43);
             this.btnnewaccount.TabIndex = 4;
             this.btnnewaccount.Text = "Sign Up";
             this.btnnewaccount.UseVisualStyleBackColor = false;
@@ -111,7 +111,7 @@
             this.LOGİN.ForeColor = System.Drawing.Color.White;
             this.LOGİN.Location = new System.Drawing.Point(58, 243);
             this.LOGİN.Name = "LOGİN";
-            this.LOGİN.Size = new System.Drawing.Size(128, 34);
+            this.LOGİN.Size = new System.Drawing.Size(128, 43);
             this.LOGİN.TabIndex = 3;
             this.LOGİN.Text = "Login";
             this.LOGİN.UseVisualStyleBackColor = false;
