@@ -41,6 +41,7 @@
             this.BtnNotes = new System.Windows.Forms.Button();
             this.btnAdminProfile = new System.Windows.Forms.Button();
             this.btnlogout = new System.Windows.Forms.Button();
+            this.btnAdminReminder = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             this.btnUserManagement.BackColor = System.Drawing.Color.Black;
             this.btnUserManagement.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserManagement.ForeColor = System.Drawing.Color.White;
-            this.btnUserManagement.Location = new System.Drawing.Point(107, 196);
+            this.btnUserManagement.Location = new System.Drawing.Point(107, 182);
             this.btnUserManagement.Name = "btnUserManagement";
             this.btnUserManagement.Size = new System.Drawing.Size(171, 45);
             this.btnUserManagement.TabIndex = 0;
@@ -147,7 +148,7 @@
             this.btnPhoneBookEdit.BackColor = System.Drawing.SystemColors.WindowText;
             this.btnPhoneBookEdit.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPhoneBookEdit.ForeColor = System.Drawing.Color.White;
-            this.btnPhoneBookEdit.Location = new System.Drawing.Point(107, 247);
+            this.btnPhoneBookEdit.Location = new System.Drawing.Point(107, 233);
             this.btnPhoneBookEdit.Name = "btnPhoneBookEdit";
             this.btnPhoneBookEdit.Size = new System.Drawing.Size(171, 40);
             this.btnPhoneBookEdit.TabIndex = 29;
@@ -160,7 +161,7 @@
             this.BtnNotes.BackColor = System.Drawing.SystemColors.WindowText;
             this.BtnNotes.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnNotes.ForeColor = System.Drawing.Color.White;
-            this.BtnNotes.Location = new System.Drawing.Point(107, 293);
+            this.BtnNotes.Location = new System.Drawing.Point(107, 279);
             this.BtnNotes.Name = "BtnNotes";
             this.BtnNotes.Size = new System.Drawing.Size(171, 40);
             this.BtnNotes.TabIndex = 30;
@@ -173,7 +174,7 @@
             this.btnAdminProfile.BackColor = System.Drawing.Color.Black;
             this.btnAdminProfile.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAdminProfile.ForeColor = System.Drawing.Color.White;
-            this.btnAdminProfile.Location = new System.Drawing.Point(107, 145);
+            this.btnAdminProfile.Location = new System.Drawing.Point(107, 131);
             this.btnAdminProfile.Name = "btnAdminProfile";
             this.btnAdminProfile.Size = new System.Drawing.Size(171, 45);
             this.btnAdminProfile.TabIndex = 31;
@@ -186,7 +187,7 @@
             this.btnlogout.BackColor = System.Drawing.Color.Maroon;
             this.btnlogout.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnlogout.ForeColor = System.Drawing.Color.White;
-            this.btnlogout.Location = new System.Drawing.Point(107, 339);
+            this.btnlogout.Location = new System.Drawing.Point(107, 371);
             this.btnlogout.Name = "btnlogout";
             this.btnlogout.Size = new System.Drawing.Size(171, 40);
             this.btnlogout.TabIndex = 32;
@@ -194,11 +195,25 @@
             this.btnlogout.UseVisualStyleBackColor = false;
             this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
+            // btnAdminReminder
+            // 
+            this.btnAdminReminder.BackColor = System.Drawing.SystemColors.WindowText;
+            this.btnAdminReminder.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAdminReminder.ForeColor = System.Drawing.Color.White;
+            this.btnAdminReminder.Location = new System.Drawing.Point(107, 325);
+            this.btnAdminReminder.Name = "btnAdminReminder";
+            this.btnAdminReminder.Size = new System.Drawing.Size(171, 40);
+            this.btnAdminReminder.TabIndex = 33;
+            this.btnAdminReminder.Text = "Reminder";
+            this.btnAdminReminder.UseVisualStyleBackColor = false;
+            this.btnAdminReminder.Click += new System.EventHandler(this.btnAdminReminder_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 473);
+            this.Controls.Add(this.btnAdminReminder);
             this.Controls.Add(this.btnlogout);
             this.Controls.Add(this.btnAdminProfile);
             this.Controls.Add(this.BtnNotes);
@@ -236,5 +251,6 @@
         private System.Windows.Forms.Button BtnNotes;
         private System.Windows.Forms.Button btnAdminProfile;
         private System.Windows.Forms.Button btnlogout;
+        private System.Windows.Forms.Button btnAdminReminder;
     }
 }

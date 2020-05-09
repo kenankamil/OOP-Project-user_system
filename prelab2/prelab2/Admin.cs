@@ -65,5 +65,12 @@ namespace ooplab
             this.Close();
             logout.ShowDialog();
         }
+
+        private void btnAdminReminder_Click(object sender, EventArgs e)
+        {
+            Reminder reminder = new Reminder();
+            this.Close();
+            reminder.Show();
+        }
     }
 }
