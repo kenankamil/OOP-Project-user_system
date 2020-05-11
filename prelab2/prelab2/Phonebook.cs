@@ -55,6 +55,7 @@ namespace ooplab
                     PhonebookRecords.PhoneBook.Add(temp);
                 }
             }
+            dgwRecords.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
         private void BtnCreateRecords_Click(object sender, EventArgs e)
         {

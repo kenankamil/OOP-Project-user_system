@@ -73,7 +73,6 @@
             // dgwRecords
             // 
             this.dgwRecords.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgwRecords.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgwRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwRecords.Location = new System.Drawing.Point(101, 120);
             this.dgwRecords.Name = "dgwRecords";

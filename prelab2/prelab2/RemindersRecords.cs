@@ -10,6 +10,7 @@ namespace ooplab
     {
         private string date;
         private string time;
+        private string meridiem;
         private string summary;
         private string description;
         private string type;
@@ -23,6 +24,6 @@ namespace ooplab
         internal static List<RemindersRecords> RemindersRecords_ { get => remindersRecords; set => remindersRecords = value; }
         public string Type { get => type; set => type = value; }
         public string LoadUserReminder { get => loadUserReminder; set => loadUserReminder = value; }
-        
+        public string Meridiem { get => meridiem; set => meridiem = value; }
     }
 }

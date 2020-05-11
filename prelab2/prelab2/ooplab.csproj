@@ -117,6 +117,12 @@
     <Compile Include="Reminder.Designer.cs">
       <DependentUpon>Reminder.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReminderBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReminderBox.Designer.cs">
+      <DependentUpon>ReminderBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="RemindersRecords.cs" />
     <Compile Include="SalaryCalculator.cs">
       <SubType>Form</SubType>
@@ -185,6 +191,9 @@
     </Compile>
     <EmbeddedResource Include="Reminder.resx">
       <DependentUpon>Reminder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReminderBox.resx">
+      <DependentUpon>ReminderBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalaryCalculator.resx">
       <DependentUpon>SalaryCalculator.cs</DependentUpon>
