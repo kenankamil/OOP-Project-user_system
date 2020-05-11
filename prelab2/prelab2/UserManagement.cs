@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Mail;
 using System.Net;
+using System.Threading;
 
 namespace ooplab
 {
@@ -32,6 +33,11 @@ namespace ooplab
             cmbNewType.Items.Add("Admin");
             cmbNewType.Items.Add("User");
             cmbNewType.Items.Add("Part-time User");
+            progressBar1.Visible = false;
+            progressBar1.Minimum = 1;
+            progressBar1.Maximum = 10;
+            progressBar1.Value = 1;
+            progressBar1.Step = 1;
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -89,9 +95,14 @@ namespace ooplab
                     mail.To.Add(users.SelectedUser.E_mail);
                     mail.IsBodyHtml = true;
                     mail.Body = ("<p>New password: ")+ txtnewpassword.Text +Environment.NewLine + ("<p><p>We suggests to perform the reset periodically for your safety!<p>") + Environment.NewLine;
-                    sc.Send(mail);
 
-                    lblmassage.Text = "Succeed and sent mail.";
+                    sc.Send(mail);
+                    progressBar1.Visible = true;
+                    for (int x = 1; x <= 10; x++)
+                    {
+                        progressBar1.PerformStep();
+                    }
+                    lblmassage.Text = "Password changed and sent mail.";
                 }
                 else
                     lblmassage.Text = "Not Confirmed";

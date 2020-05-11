@@ -20,6 +20,12 @@ namespace prelab2
         User user = null;
         private static User loaduser = new User();
         int login_flag = 0;
+        public static string remainder_notification = "check";
+
+        int Move;
+        int Mouse_X;
+        int Mouse_Y;
+
         public static User Loaduser { get => loaduser; set => loaduser = value; }
         public Form1()
         {
@@ -157,6 +163,24 @@ namespace prelab2
                 this.Close();
                 Application.Exit();
             }
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(Move==1)
+            { this.SetDesktopLocation(MousePosition.X - Mouse_X, MousePosition.Y - Mouse_Y); }
+        }
+
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            Move = 0;
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            Move = 1;
+            Mouse_X = e.X;
+            Mouse_Y = e.Y;
         }
     }
 }
